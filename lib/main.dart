@@ -1,5 +1,6 @@
 import 'package:ff_speaker_cards/create_card_screen.dart';
-import 'package:ff_speaker_cards/speaker_card.dart';
+import 'package:ff_speaker_cards/ff_card/ff_card.dart';
+import 'package:ff_speaker_cards/pre_made_speaker_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -14,10 +15,35 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: GoRouter(
+        initialLocation: '/renan',
         routes: [
           GoRoute(
             path: '/',
             builder: (context, __) => const Material(child: CreateCardScreen()),
+          ),
+          GoRoute(
+            path: '/akanksha',
+            builder: (_, state) {
+              return Material(
+                child: PreMadeSpeakerCards.akanksha,
+              );
+            },
+          ),
+          GoRoute(
+            path: '/pavel',
+            builder: (_, state) {
+              return Material(
+                child: PreMadeSpeakerCards.pavel,
+              );
+            },
+          ),
+          GoRoute(
+            path: '/renan',
+            builder: (_, state) {
+              return Material(
+                child: PreMadeSpeakerCards.renan,
+              );
+            },
           ),
           GoRoute(
             path: '/card',
@@ -32,7 +58,7 @@ class MainApp extends StatelessWidget {
               } = state.uri.queryParameters;
               return Material(
                 child: Center(
-                  child: SpeakerCard(
+                  child: FFCard(
                     image: Image.network(image),
                     type: type,
                     name: name,

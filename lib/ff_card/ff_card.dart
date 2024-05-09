@@ -1,24 +1,46 @@
+import 'package:ff_speaker_cards/ff_card/ff_card_middle_section.dart';
+import 'package:ff_speaker_cards/social.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SpeakerCard extends StatelessWidget {
+class FFCard extends StatelessWidget {
   final Image image;
   final String type;
   final String name;
   final String title;
+  final Social? social;
   final String category;
   final String categoryDescription;
 
-  const SpeakerCard({
-    required this.category,
+  const FFCard({
     required this.image,
     required this.type,
     required this.name,
     required this.title,
+    this.social,
+    required this.category,
     required this.categoryDescription,
     super.key,
   });
+
+  factory FFCard.speaker({
+    required String name,
+    required String title,
+    required String photo,
+    required String talk,
+    Social? social,
+  }) {
+    return FFCard(
+      type: 'SPEAKER PROFILE',
+      name: name,
+      title: title,
+      image: Image.asset('assets/photos/$photo'),
+      category: 'Talk',
+      categoryDescription: talk,
+      social: social,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,29 +116,11 @@ class SpeakerCard extends StatelessWidget {
               top: 267,
               right: 0,
               width: 900 - 209,
-              height: 104,
-              child: Text(
-                name,
-                style: const TextStyle(
-                  fontSize: 73.2,
-                  fontFamily: 'Futura',
-                  fontStyle: FontStyle.italic,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            Positioned(
-              top: 267 + 104 + 5,
-              right: 0,
-              width: 900 - 209,
-              height: 104,
-              child: Text(
-                title,
-                style: GoogleFonts.sourceSans3(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 41,
-                  color: Colors.white.withOpacity(0.5),
-                ),
+              height: 104 + 104 + 36,
+              child: FFCardMiddleSection(
+                name: name,
+                title: title,
+                social: social,
               ),
             ),
             Positioned(
@@ -127,7 +131,7 @@ class SpeakerCard extends StatelessWidget {
               child: Text(
                 category,
                 style: GoogleFonts.sourceSans3(
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   fontSize: 47.12,
                   color: Colors.white.withOpacity(0.5),
                 ),
