@@ -23,7 +23,7 @@ class FFCardMiddleSection extends StatelessWidget {
       children: [
         Text(
           name,
-          style: const TextStyle(
+          style:  const TextStyle(
             fontSize: 73.2,
             fontFamily: 'Futura',
             color: Colors.white,
@@ -32,8 +32,9 @@ class FFCardMiddleSection extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.sourceSans3(
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w300,
             fontSize: 41,
+            fontStyle: FontStyle.italic,
             color: Colors.white.withOpacity(0.5),
           ),
         ),
@@ -49,7 +50,8 @@ class FFCardMiddleSection extends StatelessWidget {
                 social.text,
                 style: const TextStyle(
                   fontSize: 47,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w300,
+                  fontStyle: FontStyle.italic,
                   color: Color(0xffBAEBFF),
                 ),
               ),

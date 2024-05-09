@@ -15,11 +15,24 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: GoRouter(
-        initialLocation: '/renan',
         routes: [
           GoRoute(
             path: '/',
             builder: (context, __) => const Material(child: CreateCardScreen()),
+          ),
+          GoRoute(
+            path: '/all',
+            builder: (_, state) {
+              return Material(
+                child: ListView(
+                  children: [
+                    PreMadeSpeakerCards.akanksha,
+                    PreMadeSpeakerCards.renan,
+                    PreMadeSpeakerCards.pavel,
+                  ],
+                ),
+              );
+            },
           ),
           GoRoute(
             path: '/akanksha',

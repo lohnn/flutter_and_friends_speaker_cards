@@ -1,7 +1,6 @@
 {
   "hosting": {
     "source": ".",
-    "site": "flutterfriends-card",
     "ignore": [
       "firebase.json",
       "**/.*",
