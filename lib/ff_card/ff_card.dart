@@ -130,6 +130,7 @@ class FFCard extends StatelessWidget {
               height: 59,
               child: Text(
                 category,
+                maxLines: 1,
                 style: GoogleFonts.sourceSans3(
                   fontWeight: FontWeight.w700,
                   fontSize: 47.12,

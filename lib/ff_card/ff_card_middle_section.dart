@@ -1,5 +1,7 @@
 import 'package:ff_speaker_cards/social.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -21,21 +23,27 @@ class FFCardMiddleSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Text(
-          name,
-          style:  const TextStyle(
-            fontSize: 73.2,
-            fontFamily: 'Futura',
-            color: Colors.white,
+        FittedBox(
+          child: Text(
+            name,
+            maxLines: 1,
+            style:  const TextStyle(
+              fontSize: 73.2,
+              fontFamily: 'Futura',
+              color: Colors.white,
+            ),
           ),
         ),
-        Text(
-          title,
-          style: GoogleFonts.sourceSans3(
-            fontWeight: FontWeight.w300,
-            fontSize: 41,
-            fontStyle: FontStyle.italic,
-            color: Colors.white.withOpacity(0.5),
+        FittedBox(
+          child: Text(
+            title,
+            maxLines: 1,
+            style: GoogleFonts.sourceSans3(
+              fontWeight: FontWeight.w300,
+              fontSize: 41,
+              fontStyle: FontStyle.italic,
+              color: Colors.white.withOpacity(0.5),
+            ),
           ),
         ),
         if (social case final social?) ...[
@@ -46,13 +54,16 @@ class FFCardMiddleSection extends StatelessWidget {
               onTap: () {
                 launchUrl(social.url);
               },
-              child: Text(
-                social.text,
-                style: const TextStyle(
-                  fontSize: 47,
-                  fontWeight: FontWeight.w300,
-                  fontStyle: FontStyle.italic,
-                  color: Color(0xffBAEBFF),
+              child: FittedBox(
+                child: Text(
+                  social.text,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    fontSize: 47,
+                    fontWeight: FontWeight.w300,
+                    fontStyle: FontStyle.italic,
+                    color: Color(0xffBAEBFF),
+                  ),
                 ),
               ),
             ),
