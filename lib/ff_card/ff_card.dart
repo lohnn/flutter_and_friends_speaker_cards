@@ -70,7 +70,10 @@ class FFCard extends StatelessWidget {
                 child: ClipOval(
                   child: FittedBox(
                     fit: BoxFit.cover,
-                    child: image,
+                    child: ColoredBox(
+                      color: const Color(0xff8369F6),
+                      child: image,
+                    ),
                   ),
                 ),
               ),

@@ -25,39 +25,22 @@ class MainApp extends StatelessWidget {
             builder: (_, state) {
               return Material(
                 child: ListView(
-                  children: [
-                    PreMadeSpeakerCards.akanksha,
-                    PreMadeSpeakerCards.renan,
-                    PreMadeSpeakerCards.pavel,
-                  ],
+                  children: PreMadeSpeakerCards.values
+                      .map((e) => e.card)
+                      .toList(),
                 ),
               );
             },
           ),
-          GoRoute(
-            path: '/akanksha',
-            builder: (_, state) {
-              return Material(
-                child: PreMadeSpeakerCards.akanksha,
-              );
-            },
-          ),
-          GoRoute(
-            path: '/pavel',
-            builder: (_, state) {
-              return Material(
-                child: PreMadeSpeakerCards.pavel,
-              );
-            },
-          ),
-          GoRoute(
-            path: '/renan',
-            builder: (_, state) {
-              return Material(
-                child: PreMadeSpeakerCards.renan,
-              );
-            },
-          ),
+          for (final speaker in PreMadeSpeakerCards.values)
+            GoRoute(
+              path: '/${speaker.name}',
+              builder: (_, state) {
+                return Material(
+                  child: speaker.card,
+                );
+              },
+            ),
           GoRoute(
             path: '/card',
             builder: (_, state) {
