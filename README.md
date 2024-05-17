@@ -9,6 +9,6 @@ firebase use flutter-and-friends-ad8fe
 
 To deploy, run:
 ``` Bash
-flutter build web --release --web-renderer canvaskit
+flutter build web --release --wasm
 firebase deploy --only hosting
 ```
