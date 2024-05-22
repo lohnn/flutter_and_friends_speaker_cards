@@ -19,8 +19,10 @@ int main(List<String> arguments) {
   final String inputFilePath = argResults[inputOptionName];
   final String outputFilePath = argResults[outputOptionName];
 
+  final inputBytes = File(inputFilePath).readAsBytesSync();
+  final outputFile = File(outputFilePath);
   try {
-    final image = decodeImage(File(inputFilePath).readAsBytesSync())!;
+    final image = decodeImage(inputBytes)!;
     final resized = copyResizeCropSquare(
       image,
       size: 512,
@@ -28,7 +30,7 @@ int main(List<String> arguments) {
       interpolation: Interpolation.cubic,
     );
 
-    File(outputFilePath).writeAsBytesSync(encodeJpg(resized));
+    outputFile.writeAsBytesSync(encodeJpg(resized));
 
     return 0;
   } catch (e, stackTrace) {
@@ -39,9 +41,11 @@ int main(List<String> arguments) {
       'Unexpected exception when producing grayscale image.\n'
       'Details: $e',
     );
-
     stderr.writeln(stackTrace.toString());
 
-    return 1;
+    // Ignore and pass it on!
+    outputFile.writeAsBytesSync(inputBytes);
+
+    return 0;
   }
 }
