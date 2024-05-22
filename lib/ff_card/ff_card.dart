@@ -1,8 +1,8 @@
 import 'package:ff_speaker_cards/ff_card/ff_card_middle_section.dart';
 import 'package:ff_speaker_cards/social.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 class FFCard extends StatelessWidget {
   final Image image;
@@ -57,9 +57,13 @@ class FFCard extends StatelessWidget {
                 height: 900,
               ),
             ),
-            Positioned(
+            const Positioned(
               top: 0,
-              child: SvgPicture.asset('assets/images/ff_card_background.svg'),
+              child: VectorGraphic(
+                loader: AssetBytesLoader(
+                  'assets/svgs/ff_card_background.svg',
+                ),
+              ),
             ),
             Positioned(
               top: 151,
@@ -78,10 +82,14 @@ class FFCard extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               top: 331.94,
               left: 55.85,
-              child: SvgPicture.asset('assets/images/ff_logo.svg'),
+              child: VectorGraphic(
+                loader: AssetBytesLoader(
+                  'assets/svgs/ff_logo.svg',
+                ),
+              ),
             ),
             const Positioned(
               left: 106,
