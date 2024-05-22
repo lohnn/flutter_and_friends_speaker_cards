@@ -19,6 +19,8 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^4.0.0
   vector_graphics_compiler: ^1.1.11+1
+  scale_photo_transformer:
+    path: ./scale_photo_transformer
 
 flutter:
   uses-material-design: true
@@ -27,7 +29,9 @@ flutter:
     - path: assets/svgs/
       transformers:
         - package: vector_graphics_compiler
-    - assets/photos/
+    - path: assets/photos/
+      transformers:
+        - package: scale_photo_transformer
   fonts:
     - family: Futura
       fonts:

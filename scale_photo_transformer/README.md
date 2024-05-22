@@ -1,0 +1,1 @@
+An asset transformer that scales down and crops images in rectangles.
