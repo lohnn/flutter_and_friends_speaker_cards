@@ -15,6 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: GoRouter(
+        initialLocation: '/all',
         routes: [
           GoRoute(
             path: '/',
@@ -22,12 +23,19 @@ class MainApp extends StatelessWidget {
           ),
           GoRoute(
             path: '/all',
-            builder: (_, state) {
+            builder: (context, state) {
               return Material(
-                child: ListView(
-                  children: PreMadeSpeakerCards.values
-                      .map((e) => e.card)
-                      .toList(),
+                child: ListView.builder(
+                  itemCount: PreMadeSpeakerCards.values.length,
+                  itemBuilder: (context, index) {
+                    final speaker = PreMadeSpeakerCards.values[index];
+                    return InkWell(
+                      onTap: () {
+                        context.go('/${speaker.name}');
+                      },
+                      child: speaker.card,
+                    );
+                  },
                 ),
               );
             },
