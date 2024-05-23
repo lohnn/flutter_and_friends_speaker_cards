@@ -3,7 +3,7 @@ import 'package:ff_speaker_cards/social.dart';
 
 enum PreMadeSpeakerCards {
   renan(
-    name: 'Renan Araujo',
+    personName: 'Renan Araujo',
     title: 'Software Engineer',
     photo: 'Renan Araujo.jpg',
     talk: 'Flutter web superfast: WASM',
@@ -11,7 +11,7 @@ enum PreMadeSpeakerCards {
     socialUrl: 'https://twitter.com/reNotANumber',
   ),
   pavel(
-    name: 'Pavel Sulimau',
+    personName: 'Pavel Sulimau',
     title: 'Lead Software Engineer',
     photo: 'Pavel Sulimau.jpeg',
     talk: 'Code Quality Gates for Large-Scale Flutter Apps',
@@ -19,7 +19,7 @@ enum PreMadeSpeakerCards {
     socialUrl: 'https://pasul.dev/',
   ),
   akanksha(
-    name: 'Akanksha Singh',
+    personName: 'Akanksha Singh',
     title: 'Software Engineer',
     photo: 'Akanksha Singh.jpg',
     talk: 'Automating Accessibility Audit in Flutter with Gemini AI',
@@ -27,7 +27,7 @@ enum PreMadeSpeakerCards {
     socialUrl: 'https://twitter.com/coder_jedi',
   ),
   darja(
-    name: 'Darja Orlova',
+    personName: 'Darja Orlova',
     title: 'Creator of NativePal',
     photo: 'Darja Orlova.png',
     talk:
@@ -36,7 +36,7 @@ enum PreMadeSpeakerCards {
     socialUrl: 'https://twitter.com/dariadroid',
   ),
   kilian(
-    name: 'Kilian Schulte',
+    personName: 'Kilian Schulte',
     title: 'Flutter Engineer',
     photo: 'Kilian Schulte.jpeg',
     talk: 'Jaspr: Unleashing the Power of Dart for Modern Web Development',
@@ -44,7 +44,7 @@ enum PreMadeSpeakerCards {
     socialUrl: 'https://twitter.com/schultek_dev',
   ),
   luan(
-    name: 'Luan Nico',
+    personName: 'Luan Nico',
     title: 'Software Craftsman',
     photo: 'Luan Nico.jpg',
     talk: 'Making a 3D game with Flutter and Flame',
@@ -52,7 +52,7 @@ enum PreMadeSpeakerCards {
     socialUrl: 'https://luan.xyz/',
   ),
   majid(
-    name: 'Majid Hajian',
+    personName: 'Majid Hajian',
     title: 'Author',
     photo: 'Majid Hajian.png',
     talk: '[Tenative] Practical Design Patterns for Flutter Development',
@@ -60,7 +60,7 @@ enum PreMadeSpeakerCards {
     socialUrl: 'https://twitter.com/mhadaily',
   ),
   roaa(
-    name: 'Roaa Khaddam',
+    personName: 'Roaa Khaddam',
     title: 'Software Engineer, Flutter GDE',
     photo: 'Roaa Khaddam.png',
     talk: 'Using Physics for Realistic Flutter Animations',
@@ -77,7 +77,7 @@ enum PreMadeSpeakerCards {
   // ),
   ;
 
-  final String name;
+  final String personName;
   final String title;
   final String photo;
   final String talk;
@@ -85,7 +85,7 @@ enum PreMadeSpeakerCards {
   final String? socialUrl;
 
   const PreMadeSpeakerCards({
-    required this.name,
+    required this.personName,
     required this.title,
     required this.photo,
     required this.talk,
@@ -102,7 +102,7 @@ enum PreMadeSpeakerCards {
       _ => null,
     };
     return FFCard.speaker(
-      name: name,
+      name: personName,
       title: title,
       photo: photo,
       talk: talk,
