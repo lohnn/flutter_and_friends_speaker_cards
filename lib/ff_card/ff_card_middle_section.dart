@@ -1,7 +1,5 @@
 import 'package:ff_speaker_cards/social.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -27,7 +25,7 @@ class FFCardMiddleSection extends StatelessWidget {
           child: Text(
             name,
             maxLines: 1,
-            style:  const TextStyle(
+            style: const TextStyle(
               fontSize: 73.2,
               fontFamily: 'Futura',
               color: Colors.white,

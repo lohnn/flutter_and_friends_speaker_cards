@@ -13,6 +13,7 @@ dependencies:
   google_fonts: ^6.2.1
   url_launcher: ^6.2.6
   vector_graphics: ^1.1.11+1
+  web: ^0.5.1
 
 dev_dependencies:
   flutter_test:
