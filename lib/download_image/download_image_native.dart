@@ -8,6 +8,9 @@ class DownloadImageNative implements DownloadImage {
   const DownloadImageNative();
 
   @override
+  bool get isSupported => false;
+
+  @override
   void startDownload(ByteData byteData, String downloadName) {
     throw UnsupportedError('Unsupported Platform');
   }
