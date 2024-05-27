@@ -179,7 +179,7 @@ class FFCard extends StatelessWidget {
                 when downloadImage.isSupported)
               Positioned(
                 bottom: 0,
-                left: 0,
+                right: 0,
                 child: IconButton(
                   onPressed: () async {
                     final boundary = downloadImageKey.currentContext!
