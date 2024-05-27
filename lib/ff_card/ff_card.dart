@@ -1,6 +1,11 @@
+import 'dart:ui';
+
+import 'package:ff_speaker_cards/download_image/download_image.dart';
 import 'package:ff_speaker_cards/ff_card/ff_card_middle_section.dart';
 import 'package:ff_speaker_cards/social.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
@@ -44,128 +49,153 @@ class FFCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      child: SizedBox(
-        height: 900,
-        width: 1600,
-        child: Stack(
-          children: [
-            Positioned(
-              top: 0,
-              child: Image.asset(
-                'assets/images/kulturhuset.png',
-                height: 900,
-              ),
-            ),
-            const Positioned(
-              top: 0,
-              child: VectorGraphic(
-                loader: AssetBytesLoader(
-                  'assets/svgs/ff_card_background.svg',
-                ),
-              ),
-            ),
-            Positioned(
-              top: 151,
-              left: 335,
-              child: SizedBox(
-                width: 500,
-                height: 500,
-                child: ClipOval(
-                  child: FittedBox(
-                    fit: BoxFit.cover,
-                    child: ColoredBox(
-                      color: const Color(0xff8369F6),
-                      child: image,
+    final downloadImageKey = GlobalKey();
+    return Stack(
+      children: [
+        RepaintBoundary(
+          key: downloadImageKey,
+          child: FittedBox(
+            child: SizedBox(
+              height: 900,
+              width: 1600,
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 0,
+                    child: Image.asset(
+                      'assets/images/kulturhuset.png',
+                      height: 900,
                     ),
                   ),
-                ),
-              ),
-            ),
-            const Positioned(
-              top: 331.94,
-              left: 55.85,
-              child: VectorGraphic(
-                loader: AssetBytesLoader(
-                  'assets/svgs/ff_logo.svg',
-                ),
-              ),
-            ),
-            const Positioned(
-              left: 106,
-              bottom: 49,
-              width: 578.97,
-              child: Text(
-                '3-5 SEPTEMBER - STOCKHOLM',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24.03,
-                  fontFamily: 'Futura',
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            Positioned(
-              top: 0,
-              right: 0,
-              width: 900,
-              height: 104,
-              child: Center(
-                child: Text(
-                  type.toUpperCase(),
-                  style: GoogleFonts.sourceSans3(
-                    fontWeight: FontWeight.normal,
-                    letterSpacing: 6.26,
-                    fontSize: 31.3,
-                    color: Colors.white,
+                  const Positioned(
+                    top: 0,
+                    child: VectorGraphic(
+                      loader: AssetBytesLoader(
+                        'assets/svgs/ff_card_background.svg',
+                      ),
+                    ),
                   ),
-                ),
+                  Positioned(
+                    top: 151,
+                    left: 335,
+                    child: SizedBox(
+                      width: 500,
+                      height: 500,
+                      child: ClipOval(
+                        child: FittedBox(
+                          fit: BoxFit.cover,
+                          child: ColoredBox(
+                            color: const Color(0xff8369F6),
+                            child: image,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Positioned(
+                    top: 331.94,
+                    left: 55.85,
+                    child: VectorGraphic(
+                      loader: AssetBytesLoader(
+                        'assets/svgs/ff_logo.svg',
+                      ),
+                    ),
+                  ),
+                  const Positioned(
+                    left: 106,
+                    bottom: 49,
+                    width: 578.97,
+                    child: Text(
+                      '3-5 SEPTEMBER - STOCKHOLM',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 24.03,
+                        fontFamily: 'Futura',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    width: 900,
+                    height: 104,
+                    child: Center(
+                      child: Text(
+                        type.toUpperCase(),
+                        style: GoogleFonts.sourceSans3(
+                          fontWeight: FontWeight.normal,
+                          letterSpacing: 6.26,
+                          fontSize: 31.3,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 267,
+                    right: 0,
+                    width: 900 - 209,
+                    height: 104 + 104 + 36,
+                    child: FFCardMiddleSection(
+                      name: name,
+                      title: title,
+                      social: social,
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 260,
+                    right: 0,
+                    width: 900 - 160,
+                    height: 59,
+                    child: Text(
+                      category,
+                      maxLines: 1,
+                      style: GoogleFonts.sourceSans3(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 47.12,
+                        color: Colors.white.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 54,
+                    right: 0,
+                    width: 900 - 160,
+                    height: 204,
+                    child: Text(
+                      categoryDescription,
+                      style: GoogleFonts.sourceSans3(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 47.12,
+                        color: const Color(0xffFFE2D8),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Positioned(
-              top: 267,
-              right: 0,
-              width: 900 - 209,
-              height: 104 + 104 + 36,
-              child: FFCardMiddleSection(
-                name: name,
-                title: title,
-                social: social,
-              ),
-            ),
-            Positioned(
-              bottom: 260,
-              right: 0,
-              width: 900 - 160,
-              height: 59,
-              child: Text(
-                category,
-                maxLines: 1,
-                style: GoogleFonts.sourceSans3(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 47.12,
-                  color: Colors.white.withOpacity(0.5),
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 54,
-              right: 0,
-              width: 900 - 160,
-              height: 204,
-              child: Text(
-                categoryDescription,
-                style: GoogleFonts.sourceSans3(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 47.12,
-                  color: const Color(0xffFFE2D8),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+        if (kIsWeb)
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: IconButton(
+              onPressed: () async {
+                final boundary = downloadImageKey.currentContext!
+                    .findRenderObject() as RenderRepaintBoundary;
+                final image = await boundary.toImage();
+                final byteData = await image.toByteData(
+                  format: ImageByteFormat.png,
+                );
+                DownloadImage().startDownload(byteData!, '$name.png');
+              },
+              icon: const Icon(Icons.download),
+            ),
+          ),
+      ],
     );
   }
 }
