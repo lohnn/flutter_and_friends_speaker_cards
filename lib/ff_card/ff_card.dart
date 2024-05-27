@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:ff_speaker_cards/download_image/download_image.dart';
 import 'package:ff_speaker_cards/ff_card/ff_card_middle_section.dart';
 import 'package:ff_speaker_cards/social.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,14 +49,14 @@ class FFCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final downloadImageKey = GlobalKey();
-    return Stack(
-      children: [
-        RepaintBoundary(
-          key: downloadImageKey,
-          child: FittedBox(
-            child: SizedBox(
-              height: 900,
-              width: 1600,
+    return FittedBox(
+      child: SizedBox(
+        height: 900,
+        width: 1600,
+        child: Stack(
+          children: [
+            RepaintBoundary(
+              key: downloadImageKey,
               child: Stack(
                 children: [
                   Positioned(
@@ -176,26 +175,27 @@ class FFCard extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+            if (DownloadImage() case final downloadImage
+                when downloadImage.isSupported)
+              Positioned(
+                bottom: 0,
+                left: 0,
+                child: IconButton(
+                  onPressed: () async {
+                    final boundary = downloadImageKey.currentContext!
+                        .findRenderObject() as RenderRepaintBoundary;
+                    final image = await boundary.toImage();
+                    final byteData = await image.toByteData(
+                      format: ImageByteFormat.png,
+                    );
+                    downloadImage.startDownload(byteData!, '$name.png');
+                  },
+                  icon: const Icon(Icons.download),
+                ),
+              ),
+          ],
         ),
-        if (kIsWeb)
-          Positioned(
-            bottom: 0,
-            left: 0,
-            child: IconButton(
-              onPressed: () async {
-                final boundary = downloadImageKey.currentContext!
-                    .findRenderObject() as RenderRepaintBoundary;
-                final image = await boundary.toImage();
-                final byteData = await image.toByteData(
-                  format: ImageByteFormat.png,
-                );
-                DownloadImage().startDownload(byteData!, '$name.png');
-              },
-              icon: const Icon(Icons.download),
-            ),
-          ),
-      ],
+      ),
     );
   }
 }
