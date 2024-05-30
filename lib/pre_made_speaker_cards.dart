@@ -22,7 +22,7 @@ enum PreMadeSpeakerCards {
     personName: 'Akanksha Singh',
     title: 'Software Engineer',
     photo: 'Akanksha Singh.jpg',
-    talk: 'Automating Accessibility Audit in Flutter with Gemini AI',
+    talk: 'Automating Accessibility Adoption in Flutter using Gemini AI',
     socialText: '@coder_jedi',
     socialUrl: 'https://twitter.com/coder_jedi',
   ),
