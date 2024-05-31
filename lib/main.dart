@@ -28,16 +28,29 @@ class MainApp extends StatelessWidget {
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: FFCard.width / 1.5,
                     childAspectRatio: FFCard.width / FFCard.height,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 12,
                   ),
                   itemCount: PreMadeSpeakerCards.values.length,
                   itemBuilder: (context, index) {
                     final speaker = PreMadeSpeakerCards.values[index];
-                    return InkWell(
-                      onTap: () {
-                        context.go('/${speaker.name}');
-                      },
-                      child: speaker.card,
-                    );
+                    final controller = WidgetStatesController();
+                    return ValueListenableBuilder(
+                        valueListenable: controller,
+                        child: InkWell(
+                          statesController: controller,
+                          onTap: () => context.go('/${speaker.name}'),
+                          child: speaker.card,
+                        ),
+                        builder: (context, states, child) {
+                          return Card(
+                            clipBehavior: Clip.antiAlias,
+                            margin: EdgeInsets.zero,
+                            elevation:
+                                states.contains(WidgetState.hovered) ? 0 : 12,
+                            child: child,
+                          );
+                        });
                   },
                 ),
               );
