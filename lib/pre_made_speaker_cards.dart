@@ -55,7 +55,7 @@ enum PreMadeSpeakerCards {
     personName: 'Majid Hajian',
     title: 'Author',
     photo: 'Majid Hajian.png',
-    talk: '[Tenative] Practical Design Patterns for Flutter Development',
+    talk: 'Practical Design Patterns for Flutter Development',
     socialText: '@mhadaily',
     socialUrl: 'https://twitter.com/mhadaily',
   ),
