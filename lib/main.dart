@@ -25,6 +25,7 @@ class MainApp extends StatelessWidget {
             builder: (context, state) {
               return Material(
                 child: GridView.builder(
+                  padding: const EdgeInsets.all(12),
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: FFCard.width / 1.5,
                     childAspectRatio: FFCard.width / FFCard.height,
@@ -37,10 +38,19 @@ class MainApp extends StatelessWidget {
                     final controller = WidgetStatesController();
                     return ValueListenableBuilder(
                         valueListenable: controller,
-                        child: InkWell(
-                          statesController: controller,
-                          onTap: () => context.go('/${speaker.name}'),
-                          child: speaker.card,
+                        child: Stack(
+                          children: [
+                            Positioned.fill(child: speaker.card),
+                            Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                statesController: controller,
+                                onTap: () {
+                                  // context.go('/${speaker.name}');
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                         builder: (context, states, child) {
                           return Card(
