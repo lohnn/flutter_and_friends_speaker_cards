@@ -137,8 +137,8 @@ class FFCard extends StatelessWidget {
                   ),
                   Positioned(
                     top: 267,
-                    right: 16,
-                    width: 900 - 209 - 16,
+                    right: 24,
+                    width: 900 - 209 - 24,
                     height: 104 + 104 + 36,
                     child: FFCardMiddleSection(
                       name: name,
@@ -148,8 +148,8 @@ class FFCard extends StatelessWidget {
                   ),
                   Positioned(
                     bottom: 260,
-                    right: 16,
-                    width: 900 - 160 - 16,
+                    right:  24,
+                    width: 900 - 160 - 24,
                     height: 59,
                     child: Text(
                       category,
@@ -163,8 +163,8 @@ class FFCard extends StatelessWidget {
                   ),
                   Positioned(
                     bottom: 54,
-                    right: 16,
-                    width: 900 - 160 - 16,
+                    right: 24,
+                    width: 900 - 160 - 24,
                     height: 204,
                     child: Text(
                       categoryDescription,
