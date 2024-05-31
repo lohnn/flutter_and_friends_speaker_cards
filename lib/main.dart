@@ -24,7 +24,11 @@ class MainApp extends StatelessWidget {
             path: '/all',
             builder: (context, state) {
               return Material(
-                child: ListView.builder(
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: FFCard.width / 1.5,
+                    childAspectRatio: FFCard.width / FFCard.height,
+                  ),
                   itemCount: PreMadeSpeakerCards.values.length,
                   itemBuilder: (context, index) {
                     final speaker = PreMadeSpeakerCards.values[index];

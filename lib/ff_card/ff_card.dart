@@ -46,13 +46,16 @@ class FFCard extends StatelessWidget {
     );
   }
 
+  static const double width = 1600;
+  static const double height = 900;
+
   @override
   Widget build(BuildContext context) {
     final downloadImageKey = GlobalKey();
     return FittedBox(
       child: SizedBox(
-        height: 900,
-        width: 1600,
+        height: height,
+        width: width,
         child: Stack(
           children: [
             RepaintBoundary(
