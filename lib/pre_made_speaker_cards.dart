@@ -67,14 +67,31 @@ enum PreMadeSpeakerCards {
     socialText: '@roaakdm',
     socialUrl: 'https://twitter.com/roaakdm',
   ),
-  // slava(
-  //   name: ,
-  //   title: ,
-  //   photo: 'Slava Egorov.jpg',
-  //   talk: ,
-  //   socialText: ,
-  //   socialUrl: ,
-  // ),
+  filip(
+    personName: 'Filip Hráček',
+    title: 'Founder of Raindead',
+    photo: 'Filip Hracek.jpg',
+    talk:
+        'Flutter in the year 2044: Discussing a community plan for Flutter’s next 20 years',
+    socialText: 'Mastodon @filiph',
+    socialUrl: 'https://mastodon.social/@filiph',
+  ),
+  slava(
+    personName: 'Vyacheslav "Slava" Egorov',
+    title: 'Dart Lead (AOT & JIT) at Google',
+    photo: 'Slava Egorov.jpg',
+    talk: 'Secret (will be announced soon)',
+    socialText: '@mraleph',
+    socialUrl: 'https://x.com/mraleph',
+  ),
+  craig(
+    personName: 'Craig Labenz',
+    title: 'Developer Relations Engineer at Google',
+    photo: 'Craig.jpeg',
+    talk: 'TBA',
+    socialText: '@craig_labenz',
+    socialUrl: 'https://x.com/craig_labenz',
+  ),
   ;
 
   final String personName;
