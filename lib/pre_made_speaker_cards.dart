@@ -39,7 +39,7 @@ enum PreMadeSpeakerCards {
     personName: 'Kilian Schulte',
     title: 'Flutter Engineer',
     photo: 'Kilian Schulte.jpeg',
-    talk: 'Jaspr: Unleashing the Power of Dart for Modern Web Development',
+    talk: 'Inside Jaspr: Building a Dart web framework from scratch',
     socialText: '@schultek_dev',
     socialUrl: 'https://twitter.com/schultek_dev',
   ),
