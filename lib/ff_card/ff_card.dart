@@ -54,151 +54,154 @@ class FFCard extends StatelessWidget {
     final downloadImageKey = GlobalKey();
     return Hero(
       tag: '$type$name$title$social$category$categoryDescription',
-      child: FittedBox(
-        child: SizedBox(
-          height: height,
-          width: width,
-          child: Stack(
-            children: [
-              RepaintBoundary(
-                key: downloadImageKey,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      top: 0,
-                      child: Image.asset(
-                        'assets/images/kulturhuset.png',
-                        height: 900,
-                      ),
-                    ),
-                    const Positioned(
-                      top: 0,
-                      child: VectorGraphic(
-                        loader: AssetBytesLoader(
-                          'assets/svgs/ff_card_background.svg',
+      child: Material(
+        color: Colors.transparent,
+        child: FittedBox(
+          child: SizedBox(
+            height: height,
+            width: width,
+            child: Stack(
+              children: [
+                RepaintBoundary(
+                  key: downloadImageKey,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 0,
+                        child: Image.asset(
+                          'assets/images/kulturhuset.png',
+                          height: 900,
                         ),
                       ),
-                    ),
-                    Positioned(
-                      top: 151,
-                      left: 335,
-                      child: SizedBox(
-                        width: 500,
-                        height: 500,
-                        child: ClipOval(
-                          child: FittedBox(
-                            fit: BoxFit.cover,
-                            child: ColoredBox(
-                              color: const Color(0xff8369F6),
-                              child: image,
+                      const Positioned(
+                        top: 0,
+                        child: VectorGraphic(
+                          loader: AssetBytesLoader(
+                            'assets/svgs/ff_card_background.svg',
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 151,
+                        left: 335,
+                        child: SizedBox(
+                          width: 500,
+                          height: 500,
+                          child: ClipOval(
+                            child: FittedBox(
+                              fit: BoxFit.cover,
+                              child: ColoredBox(
+                                color: const Color(0xff8369F6),
+                                child: image,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    const Positioned(
-                      top: 331.94,
-                      left: 55.85,
-                      child: VectorGraphic(
-                        loader: AssetBytesLoader(
-                          'assets/svgs/ff_logo.svg',
+                      const Positioned(
+                        top: 331.94,
+                        left: 55.85,
+                        child: VectorGraphic(
+                          loader: AssetBytesLoader(
+                            'assets/svgs/ff_logo.svg',
+                          ),
                         ),
                       ),
-                    ),
-                    const Positioned(
-                      left: 106,
-                      bottom: 49,
-                      width: 578.97,
-                      child: Text(
-                        '3-5 SEPTEMBER - STOCKHOLM',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 24.03,
-                          fontFamily: 'Futura',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 0,
-                      right: 0,
-                      width: 900,
-                      height: 104,
-                      child: Center(
+                      const Positioned(
+                        left: 106,
+                        bottom: 49,
+                        width: 578.97,
                         child: Text(
-                          type.toUpperCase(),
-                          style: GoogleFonts.sourceSans3(
-                            fontWeight: FontWeight.normal,
-                            letterSpacing: 6.26,
-                            fontSize: 31.3,
+                          '3-5 SEPTEMBER - STOCKHOLM',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 24.03,
+                            fontFamily: 'Futura',
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      top: 267,
-                      right: 24,
-                      width: 900 - 209 - 24,
-                      height: 104 + 104 + 36,
-                      child: FFCardMiddleSection(
-                        name: name,
-                        title: title,
-                        social: social,
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 260,
-                      right: 24,
-                      width: 900 - 160 - 24,
-                      height: 59,
-                      child: Text(
-                        category,
-                        maxLines: 1,
-                        style: GoogleFonts.sourceSans3(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 47.12,
-                          color: Colors.white.withOpacity(0.5),
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        width: 900,
+                        height: 104,
+                        child: Center(
+                          child: Text(
+                            type.toUpperCase(),
+                            style: GoogleFonts.sourceSans3(
+                              fontWeight: FontWeight.normal,
+                              letterSpacing: 6.26,
+                              fontSize: 31.3,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      bottom: 54,
-                      right: 24,
-                      width: 900 - 160 - 24,
-                      height: 204,
-                      child: Text(
-                        categoryDescription,
-                        style: GoogleFonts.sourceSans3(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 47.12,
-                          color: const Color(0xffFFE2D8),
+                      Positioned(
+                        top: 267,
+                        right: 24,
+                        width: 900 - 209 - 24,
+                        height: 104 + 104 + 36,
+                        child: FFCardMiddleSection(
+                          name: name,
+                          title: title,
+                          social: social,
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              if (DownloadImage() case final downloadImage
-                  when downloadImage.isSupported)
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: IconButton(
-                    onPressed: () async {
-                      final boundary = downloadImageKey.currentContext!
-                          .findRenderObject() as RenderRepaintBoundary;
-                      final image = await boundary.toImage();
-                      final byteData = await image.toByteData(
-                        format: ImageByteFormat.png,
-                      );
-                      downloadImage.startDownload(byteData!, '$name.png');
-                    },
-                    icon: const Icon(Icons.download),
+                      Positioned(
+                        bottom: 260,
+                        right: 24,
+                        width: 900 - 160 - 24,
+                        height: 59,
+                        child: Text(
+                          category,
+                          maxLines: 1,
+                          style: GoogleFonts.sourceSans3(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 47.12,
+                            color: Colors.white.withOpacity(0.5),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 54,
+                        right: 24,
+                        width: 900 - 160 - 24,
+                        height: 204,
+                        child: Text(
+                          categoryDescription,
+                          style: GoogleFonts.sourceSans3(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 47.12,
+                            color: const Color(0xffFFE2D8),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-            ],
+                if (DownloadImage() case final downloadImage
+                    when downloadImage.isSupported)
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: IconButton(
+                      onPressed: () async {
+                        final boundary = downloadImageKey.currentContext!
+                            .findRenderObject() as RenderRepaintBoundary;
+                        final image = await boundary.toImage();
+                        final byteData = await image.toByteData(
+                          format: ImageByteFormat.png,
+                        );
+                        downloadImage.startDownload(byteData!, '$name.png');
+                      },
+                      icon: const Icon(Icons.download),
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
