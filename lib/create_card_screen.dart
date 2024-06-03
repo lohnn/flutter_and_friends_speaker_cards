@@ -53,8 +53,8 @@ class _CreateCardPageState extends State<CreateCardScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
-          child: FFCard(
-            image: Image.network(imageText.text),
+          child: FFCard.attendee(
+            photo: imageText.text,
             type: typeText.text.nullIfEmpty ?? 'TYPE',
             name: nameText.text.nullIfEmpty ?? 'Your Name',
             title: titleText.text.nullIfEmpty ?? 'Your Title',

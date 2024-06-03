@@ -1,32 +1,38 @@
 import 'dart:ui';
 
 import 'package:ff_speaker_cards/download_image/download_image.dart';
-import 'package:ff_speaker_cards/ff_card/ff_card_middle_section.dart';
+import 'package:ff_speaker_cards/ff_card/speaker_card.dart';
+import 'package:ff_speaker_cards/ff_card/sponsor_card.dart';
 import 'package:ff_speaker_cards/social.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
-class FFCard extends StatelessWidget {
-  final Image image;
-  final String type;
+abstract class FFCard extends StatelessWidget {
   final String name;
-  final String title;
-  final Social? social;
-  final String category;
-  final String categoryDescription;
 
-  const FFCard({
-    required this.image,
-    required this.type,
-    required this.name,
-    required this.title,
-    this.social,
-    required this.category,
-    required this.categoryDescription,
-    super.key,
-  });
+  const FFCard({super.key, required this.name});
+
+  factory FFCard.attendee({
+    required String name,
+    required String title,
+    required String photo,
+    Social? social,
+    required String type,
+    required String category,
+    required String categoryDescription,
+  }) {
+    return SpeakerCard(
+      type: 'SPEAKER PROFILE',
+      name: name,
+      title: title,
+      image: Image.network('assets/photos/$photo'),
+      category: 'Talk',
+      categoryDescription: 'Person stuff',
+      social: social,
+    );
+  }
 
   factory FFCard.speaker({
     required String name,
@@ -35,7 +41,7 @@ class FFCard extends StatelessWidget {
     required String talk,
     Social? social,
   }) {
-    return FFCard(
+    return SpeakerCard(
       type: 'SPEAKER PROFILE',
       name: name,
       title: title,
@@ -46,14 +52,35 @@ class FFCard extends StatelessWidget {
     );
   }
 
+  factory FFCard.sponsor({
+    required String name,
+    required String logo,
+    required String url,
+  }) {
+    return SponsorCard(
+      name: name,
+      type: 'Sponsor presentation',
+      image: AssetImage('assets/logos/$logo'),
+      url: url,
+    );
+  }
+
   static const double width = 1600;
   static const double height = 900;
 
+  Object get tag;
+
+  Iterable<Widget> buildRightSide(
+    BuildContext context,
+    BoxConstraints boxConstraints,
+  );
+
+  @nonVirtual
   @override
   Widget build(BuildContext context) {
     final downloadImageKey = GlobalKey();
     return Hero(
-      tag: '$type$name$title$social$category$categoryDescription',
+      tag: tag,
       child: Material(
         color: Colors.transparent,
         child: FittedBox(
@@ -81,32 +108,6 @@ class FFCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Positioned(
-                        top: 151,
-                        left: 335,
-                        child: SizedBox(
-                          width: 500,
-                          height: 500,
-                          child: ClipOval(
-                            child: FittedBox(
-                              fit: BoxFit.cover,
-                              child: ColoredBox(
-                                color: const Color(0xff8369F6),
-                                child: image,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Positioned(
-                        top: 331.94,
-                        left: 55.85,
-                        child: VectorGraphic(
-                          loader: AssetBytesLoader(
-                            'assets/svgs/ff_logo.svg',
-                          ),
-                        ),
-                      ),
                       const Positioned(
                         left: 106,
                         bottom: 49,
@@ -122,60 +123,19 @@ class FFCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        width: 900,
-                        height: 104,
-                        child: Center(
-                          child: Text(
-                            type.toUpperCase(),
-                            style: GoogleFonts.sourceSans3(
-                              fontWeight: FontWeight.normal,
-                              letterSpacing: 6.26,
-                              fontSize: 31.3,
-                              color: Colors.white,
-                            ),
-                          ),
+                      ...buildRightSide(
+                        context,
+                        const BoxConstraints(
+                          maxWidth: 900,
+                          maxHeight: 900,
                         ),
                       ),
-                      Positioned(
-                        top: 267,
-                        right: 24,
-                        width: 900 - 209 - 24,
-                        height: 104 + 104 + 36,
-                        child: FFCardMiddleSection(
-                          name: name,
-                          title: title,
-                          social: social,
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 260,
-                        right: 24,
-                        width: 900 - 160 - 24,
-                        height: 59,
-                        child: Text(
-                          category,
-                          maxLines: 1,
-                          style: GoogleFonts.sourceSans3(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 47.12,
-                            color: Colors.white.withOpacity(0.5),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 54,
-                        right: 24,
-                        width: 900 - 160 - 24,
-                        height: 204,
-                        child: Text(
-                          categoryDescription,
-                          style: GoogleFonts.sourceSans3(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 47.12,
-                            color: const Color(0xffFFE2D8),
+                      const Positioned(
+                        top: 331.94,
+                        left: 55.85,
+                        child: VectorGraphic(
+                          loader: AssetBytesLoader(
+                            'assets/svgs/ff_logo.svg',
                           ),
                         ),
                       ),

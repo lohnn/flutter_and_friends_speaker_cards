@@ -1,6 +1,7 @@
 import 'package:ff_speaker_cards/create_card_screen.dart';
 import 'package:ff_speaker_cards/ff_card/ff_card.dart';
 import 'package:ff_speaker_cards/pre_made_speaker_cards.dart';
+import 'package:ff_speaker_cards/sponsor_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,11 +14,17 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cards = [
+      ...SponsorCards.values.map((e) => e.card),
+      ...PreMadeSpeakerCards.values.map((e) => e.card),
+    ];
+
     return MaterialApp.router(
       routerConfig: GoRouter(
+        initialLocation: '/all',
         routes: [
           GoRoute(
-            path: '/',
+            path: '/create',
             builder: (context, __) => const Material(child: CreateCardScreen()),
           ),
           GoRoute(
@@ -32,20 +39,20 @@ class MainApp extends StatelessWidget {
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,
                   ),
-                  itemCount: PreMadeSpeakerCards.values.length,
+                  itemCount: cards.length,
                   itemBuilder: (context, index) {
-                    final speaker = PreMadeSpeakerCards.values[index];
+                    final card = cards[index];
                     final controller = WidgetStatesController();
                     return ValueListenableBuilder(
                         valueListenable: controller,
                         child: Stack(
                           children: [
-                            Positioned.fill(child: speaker.card),
+                            Positioned.fill(child: card),
                             Material(
                               color: Colors.transparent,
                               child: InkWell(
                                 statesController: controller,
-                                onTap: () => context.go('/${speaker.name}'),
+                                onTap: () => context.go('/${card.name}'),
                               ),
                             ),
                           ],
@@ -64,12 +71,12 @@ class MainApp extends StatelessWidget {
               );
             },
           ),
-          for (final speaker in PreMadeSpeakerCards.values)
+          for (final card in cards)
             GoRoute(
-              path: '/${speaker.name}',
+              path: '/${Uri.encodeComponent(card.name)}',
               builder: (_, state) {
                 return Material(
-                  child: speaker.card,
+                  child: card,
                 );
               },
             ),
@@ -86,8 +93,8 @@ class MainApp extends StatelessWidget {
               } = state.uri.queryParameters;
               return Material(
                 child: Center(
-                  child: FFCard(
-                    image: Image.network(image),
+                  child: FFCard.attendee(
+                    photo: image,
                     type: type,
                     name: name,
                     title: title,

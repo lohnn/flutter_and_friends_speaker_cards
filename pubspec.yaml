@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  go_router: ^14.1.3
+  go_router: ^14.1.4
   google_fonts: ^6.2.1
   url_launcher: ^6.2.6
   vector_graphics: ^1.1.11+1
@@ -27,12 +27,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
-    - path: assets/svgs/
-      transformers:
-        - package: vector_graphics_compiler
+    - path: assets/logos/
     - path: assets/photos/
       transformers:
         - package: scale_photo_transformer
+    - path: assets/svgs/
+      transformers:
+        - package: vector_graphics_compiler
   fonts:
     - family: Futura
       fonts:

@@ -15,11 +15,11 @@
 <g style="mix-blend-mode:overlay">
 <rect x="701" y="276" width="92" height="622" fill="black" fill-opacity="0.152999"/>
 </g>
-<path d="M793 546.048L1338 546" stroke="#A894FF" stroke-width="2"/>
-<path d="M776 224.048L1405 224" stroke="#A894FF" stroke-width="2"/>
-<path d="M739 218.048L1368 218" stroke="#A894FF" stroke-width="2"/>
+<!--<path d="M793 546.048L1338 546" stroke="#A894FF" stroke-width="2"/>-->
+<!--<path d="M776 224.048L1405 224" stroke="#A894FF" stroke-width="2"/>-->
+<!--<path d="M739 218.048L1368 218" stroke="#A894FF" stroke-width="2"/>-->
+<!--<path d="M812 537.048H1544" stroke="#A894FF" stroke-width="2"/>-->
 <path opacity="0.190523" fill-rule="evenodd" clip-rule="evenodd" d="M1544 69L1488 86L1544 103V70L1600 87V53V19L1544 36V35V1L1488 18L1544 35L1488 52L1544 69ZM1544 69V36L1600 53L1544 70V69Z" fill="url(#paint5_linear_34_138)"/>
-<path d="M812 537.048H1544" stroke="#A894FF" stroke-width="2"/>
 <defs>
 <linearGradient id="paint0_linear_34_138" x1="1654.36" y1="521.511" x2="964.2" y2="-239.127" gradientUnits="userSpaceOnUse">
 <stop stop-color="#8369F6"/>
