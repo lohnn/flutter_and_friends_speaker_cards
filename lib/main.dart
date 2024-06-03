@@ -45,9 +45,7 @@ class MainApp extends StatelessWidget {
                               color: Colors.transparent,
                               child: InkWell(
                                 statesController: controller,
-                                onTap: () {
-                                  // context.go('/${speaker.name}');
-                                },
+                                onTap: () => context.go('/${speaker.name}'),
                               ),
                             ),
                           ],
