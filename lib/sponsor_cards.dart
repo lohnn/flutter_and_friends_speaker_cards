@@ -6,6 +6,46 @@ enum SponsorCards {
     logo: 'flutter.png',
     url: 'https://flutter.dev/',
   ),
+  hackberry(
+    name: 'Hackberry',
+    logo: 'hackberry.png',
+    url: 'https://www.hackberry.se/',
+  ),
+  codemagic(
+    name: 'CodeMagic',
+    logo: 'codemagic.png',
+    url: 'https://codemagic.io/',
+  ),
+  invertase(
+    name: 'Invertase',
+    logo: 'invertase.png',
+    url: 'https://invertase.io/',
+  ),
+  skandia(
+    name: 'Skandia',
+    logo: 'skandia.png',
+    url: 'https://www.skandia.se/',
+  ),
+  leanCode(
+    name: 'LeanCode',
+    logo: 'leancode.png',
+    url: 'https://leancode.co/',
+  ),
+  rebelAppStudio(
+    name: 'Rebel App Studio',
+    logo: 'rebelappstudio.png',
+    url: 'https://rebelappstudio.com/',
+  ),
+  blueFire(
+    name: 'Blue Fire',
+    logo: 'bluefire.png',
+    url: 'https://opencollective.com/blue-fire',
+  ),
+  done(
+    name: 'Done',
+    logo: 'done.png',
+    url: 'https://doneservices.se',
+  ),
   ;
 
   final String name;
