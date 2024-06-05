@@ -15,8 +15,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cards = [
-      ...SponsorCards.values.map((e) => e.card),
       ...PreMadeSpeakerCards.values.map((e) => e.card),
+      ...SponsorCards.values.map((e) => e.card),
     ];
 
     return MaterialApp.router(
