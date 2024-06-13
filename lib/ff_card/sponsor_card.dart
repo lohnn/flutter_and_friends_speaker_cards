@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 class SponsorCard extends FFCard {
   final String type;
-  final ImageProvider image;
+  final Widget image;
   final String url;
 
   const SponsorCard({
@@ -26,7 +26,7 @@ class SponsorCard extends FFCard {
     BoxConstraints boxConstraints,
   ) sync* {
     yield Positioned(
-      top: 200,
+      top: 150,
       right: 0,
       width: boxConstraints.maxWidth,
       child: const Center(
@@ -41,6 +41,30 @@ class SponsorCard extends FFCard {
         ),
       ),
     );
+
+    // Image shadow
+    const double logoWidth = 600;
+    const double logoHeight = 300;
+
+    yield Positioned(
+      top: 0,
+      bottom: 0,
+      right: 0,
+      width: boxConstraints.maxWidth,
+      child: Center(
+        child: Transform.translate(
+          offset: const Offset(16, 16),
+          child: SizedBox(
+            width: logoWidth,
+            height: logoHeight,
+            child: FittedBox(
+              child: DropShadowedImage(image: image),
+            ),
+          ),
+        ),
+      ),
+    );
+
     yield Positioned(
       top: 0,
       bottom: 0,
@@ -54,10 +78,10 @@ class SponsorCard extends FFCard {
               launchUrlString(url);
             },
             child: SizedBox(
-              width: 585,
-              height: 170,
+              width: logoWidth,
+              height: logoHeight,
               child: FittedBox(
-                child: DropShadowedImage(imageProvider: image),
+                child: image,
               ),
             ),
           ),
@@ -68,37 +92,33 @@ class SponsorCard extends FFCard {
 }
 
 class DropShadowedImage extends StatelessWidget {
-  final ImageProvider imageProvider;
+  final Widget image;
   final double sigma;
 
   const DropShadowedImage({
     super.key,
-    required this.imageProvider,
+    required this.image,
     this.sigma = 12.0,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Transform.translate(
-          offset: const Offset(16, 16),
-          // offset: Offset.zero,
-          child: ImageFiltered(
-            imageFilter: ui.ImageFilter.blur(
-              sigmaX: sigma,
-              sigmaY: sigma,
-              tileMode: TileMode.decal,
-            ),
-            child: Image(
-              image: imageProvider,
-              color: const Color.fromRGBO(0, 0, 0, 0.3),
-              fit: BoxFit.contain,
-            ),
-          ),
+    return ImageFiltered(
+      imageFilter: ui.ImageFilter.blur(
+        sigmaX: sigma,
+        sigmaY: sigma,
+        tileMode: TileMode.decal,
+      ),
+      child: ColorFiltered(
+        colorFilter: const ColorFilter.mode(
+          Colors.black38,
+          BlendMode.srcIn,
         ),
-        Image(image: imageProvider),
-      ],
+        child: image,
+      ),
+      // color: const Color.fromRGBO(0, 0, 0, 0.3),
+      // fit: BoxFit.contain,
+      // ),
     );
   }
 }

@@ -13,7 +13,7 @@ enum SponsorCards {
   ),
   codemagic(
     name: 'CodeMagic',
-    logo: 'codemagic.png',
+    logo: 'svg/codemagic.svg',
     url: 'https://codemagic.io/',
   ),
   invertase(
@@ -23,7 +23,7 @@ enum SponsorCards {
   ),
   skandia(
     name: 'Skandia',
-    logo: 'skandia.png',
+    logo: 'svg/skandia.svg',
     url: 'https://www.skandia.se/',
   ),
   leanCode(

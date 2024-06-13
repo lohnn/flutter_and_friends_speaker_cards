@@ -7,7 +7,7 @@ import 'package:ff_speaker_cards/social.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:vector_graphics/vector_graphics.dart';
+import 'package:vector_graphics/vector_graphics_compat.dart';
 
 abstract class FFCard extends StatelessWidget {
   final String name;
@@ -60,7 +60,14 @@ abstract class FFCard extends StatelessWidget {
     return SponsorCard(
       name: name,
       type: 'Sponsor presentation',
-      image: AssetImage('assets/logos/$logo'),
+      image: switch (logo) {
+        final path when path.startsWith('svg/') => createCompatVectorGraphic(
+            loader: AssetBytesLoader('assets/logos/$path'),
+          ),
+        final path => Image(
+            image: AssetImage('assets/logos/$path'),
+          ),
+      },
       url: url,
     );
   }
