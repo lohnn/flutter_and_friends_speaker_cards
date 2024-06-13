@@ -15,6 +15,6 @@ firebase deploy --only hosting
 
 To deploy legacy web (to circumvent shadow render issue), run:
 ``` Bash
-flutter build web --release --web-renderer canvaskit
+flutter build web --release
 firebase deploy --only hosting
 ```
