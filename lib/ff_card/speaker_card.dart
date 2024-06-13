@@ -83,7 +83,7 @@ class SpeakerCard extends FFCard {
     );
     yield Positioned(
       top: 267,
-      right: 24,
+      right: 56,
       width: 900 - 209 - 24,
       height: 104 + 104 + 36,
       child: FFCardMiddleSection(
@@ -94,7 +94,7 @@ class SpeakerCard extends FFCard {
     );
     yield Positioned(
       bottom: 260,
-      right: 24,
+      right: 56,
       width: 900 - 160 - 24,
       height: 59,
       child: Text(
@@ -109,7 +109,7 @@ class SpeakerCard extends FFCard {
     );
     yield Positioned(
       bottom: 54,
-      right: 24,
+      right: 56,
       width: 900 - 160 - 24,
       height: 204,
       child: Text(
