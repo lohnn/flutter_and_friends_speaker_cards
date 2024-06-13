@@ -75,6 +75,10 @@ abstract class FFCard extends StatelessWidget {
   static const double width = 1600;
   static const double height = 900;
 
+  double get dateOffset => 45;
+
+  Offset get ffLogoOffset => const Offset(331.94, 55.85);
+
   Object get tag;
 
   Iterable<Widget> buildRightSide(
@@ -115,11 +119,11 @@ abstract class FFCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Positioned(
-                        left: 106,
+                      Positioned(
+                        left: dateOffset,
                         bottom: 49,
-                        width: 578.97,
-                        child: Text(
+                        width: 700,
+                        child: const Text(
                           '3-5 SEPTEMBER - STOCKHOLM',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -137,10 +141,10 @@ abstract class FFCard extends StatelessWidget {
                           maxHeight: 900,
                         ),
                       ),
-                      const Positioned(
-                        top: 331.94,
-                        left: 55.85,
-                        child: VectorGraphic(
+                      Positioned(
+                        top: ffLogoOffset.dx,
+                        left: ffLogoOffset.dy,
+                        child: const VectorGraphic(
                           loader: AssetBytesLoader(
                             'assets/svgs/ff_logo.svg',
                           ),

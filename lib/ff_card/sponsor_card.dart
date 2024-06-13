@@ -21,6 +21,12 @@ class SponsorCard extends FFCard {
   Object get tag => name;
 
   @override
+  double get dateOffset => 0;
+
+  @override
+  Offset get ffLogoOffset => const Offset(200, 90);
+
+  @override
   Iterable<Widget> buildRightSide(
     BuildContext context,
     BoxConstraints boxConstraints,
