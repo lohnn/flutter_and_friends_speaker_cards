@@ -111,10 +111,10 @@ abstract class FFCard extends StatelessWidget {
                           height: 900,
                         ),
                       ),
-                      const Positioned(
+                      Positioned(
                         top: 0,
-                        child: VectorGraphic(
-                          loader: AssetBytesLoader(
+                        child: createCompatVectorGraphic(
+                          loader: const AssetBytesLoader(
                             'assets/svgs/ff_card_background.svg',
                           ),
                         ),
@@ -144,8 +144,8 @@ abstract class FFCard extends StatelessWidget {
                       Positioned(
                         top: ffLogoOffset.dx,
                         left: ffLogoOffset.dy,
-                        child: const VectorGraphic(
-                          loader: AssetBytesLoader(
+                        child: createCompatVectorGraphic(
+                          loader: const AssetBytesLoader(
                             'assets/svgs/ff_logo.svg',
                           ),
                         ),
