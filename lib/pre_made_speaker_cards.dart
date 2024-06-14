@@ -88,7 +88,7 @@ enum PreMadeSpeakerCards {
     personName: 'Craig Labenz',
     title: 'Developer Relations Engineer at Google',
     photo: 'Craig.jpeg',
-    talk: 'TBA',
+    talk: 'Keynote',
     socialText: '@craig_labenz',
     socialUrl: 'https://x.com/craig_labenz',
   ),
