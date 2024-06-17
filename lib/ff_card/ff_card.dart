@@ -124,7 +124,7 @@ abstract class FFCard extends StatelessWidget {
                         bottom: 49,
                         width: 700,
                         child: const Text(
-                          '3-5 SEPTEMBER - STOCKHOLM',
+                          '1-3 SEPTEMBER - STOCKHOLM',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 24.03,
