@@ -92,6 +92,22 @@ enum PreMadeSpeakerCards {
     socialText: '@craig_labenz',
     socialUrl: 'https://x.com/craig_labenz',
   ),
+  michal(
+    personName: 'Michał Gapiński',
+    title: 'Founder and Software Engineer',
+    photo: 'Michał Gapiński.png',
+    talk: 'Embedded Flutter on Raspberry Pi 5: Simplification of Daily E-Commerce Operations',
+    socialText: '@mikegapinski',
+    socialUrl: 'https://twitter.com/mikegapinski',
+  ),
+  simon(
+    personName: 'Simon Auer',
+    title: 'CEO',
+    photo: 'Simon Auer.jpg',
+    talk: 'Quick Wins - how to make your app more accessible',
+    socialText: '@SimonEritsch',
+    socialUrl: 'https://twitter.com/SimonEritsch',
+  ),
   ;
 
   final String personName;
