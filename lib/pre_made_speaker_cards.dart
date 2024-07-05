@@ -78,9 +78,9 @@ enum PreMadeSpeakerCards {
   ),
   slava(
     personName: 'Vyacheslav "Slava" Egorov',
-    title: 'Dart Lead (AOT & JIT) at Google',
+    title: 'Uber-TL of Dart',
     photo: 'Slava Egorov.jpg',
-    talk: 'Secret (will be announced soon)',
+    talk: 'Learning something about Dart performance by optimizing jsonDecode',
     socialText: '@mraleph',
     socialUrl: 'https://x.com/mraleph',
   ),
