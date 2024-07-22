@@ -1,9 +1,7 @@
-import 'dart:ui';
-
-import 'package:ff_speaker_cards/download_image/download_image.dart';
 import 'package:ff_speaker_cards/ff_card/speaker_card.dart';
 import 'package:ff_speaker_cards/ff_card/sponsor_card.dart';
 import 'package:ff_speaker_cards/social.dart';
+import 'package:ff_speaker_cards/widgets/download_widget_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -153,24 +151,14 @@ abstract class FFCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                if (DownloadImage() case final downloadImage
-                    when downloadImage.isSupported)
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: IconButton(
-                      onPressed: () async {
-                        final boundary = downloadImageKey.currentContext!
-                            .findRenderObject() as RenderRepaintBoundary;
-                        final image = await boundary.toImage();
-                        final byteData = await image.toByteData(
-                          format: ImageByteFormat.png,
-                        );
-                        downloadImage.startDownload(byteData!, '$name.png');
-                      },
-                      icon: const Icon(Icons.download),
-                    ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: DownloadWidgetButton(
+                    downloadImageKey: downloadImageKey,
+                    name: name,
                   ),
+                ),
               ],
             ),
           ),

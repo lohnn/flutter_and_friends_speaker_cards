@@ -108,6 +108,14 @@ enum PreMadeSpeakerCards {
     socialText: '@SimonEritsch',
     socialUrl: 'https://twitter.com/SimonEritsch',
   ),
+  jochum(
+    personName: 'Jochum van der Ploeg',
+    title: 'Senior Open Source Engineer at Very Good Ventures',
+    photo: 'Jochum van der Ploeg.jpeg',
+    talk: 'How big are macros really?',
+    socialText: '@wolfenrain',
+    socialUrl: 'https://twitter.com/wolfenrain',
+  ),
   ;
 
   final String personName;
