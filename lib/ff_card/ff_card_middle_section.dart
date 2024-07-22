@@ -25,9 +25,8 @@ class FFCardMiddleSection extends StatelessWidget {
           child: Text(
             name,
             maxLines: 1,
-            style: const TextStyle(
+            style: GoogleFonts.poppins(
               fontSize: 73.2,
-              fontFamily: 'Futura',
               color: Colors.white,
             ),
           ),
