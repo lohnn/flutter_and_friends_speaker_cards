@@ -38,7 +38,3 @@ flutter:
     - path: assets/svgs/
       transformers:
         - package: vector_graphics_compiler
-  fonts:
-    - family: Futura
-      fonts:
-        - asset: assets/fonts/Futura.ttc

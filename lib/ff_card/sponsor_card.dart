@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:ff_speaker_cards/ff_card/ff_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class SponsorCard extends FFCard {
@@ -35,13 +36,12 @@ class SponsorCard extends FFCard {
       top: 150,
       right: 0,
       width: boxConstraints.maxWidth,
-      child: const Center(
+      child: Center(
         child: Text(
           'Sponsor presentation',
           maxLines: 1,
-          style: TextStyle(
+          style: GoogleFonts.poppins(
             fontSize: 55,
-            fontFamily: 'Futura',
             color: Colors.white,
           ),
         ),

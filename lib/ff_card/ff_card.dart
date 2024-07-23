@@ -4,6 +4,7 @@ import 'package:ff_speaker_cards/social.dart';
 import 'package:ff_speaker_cards/widgets/download_widget_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:vector_graphics/vector_graphics_compat.dart';
 
 abstract class FFCard extends StatelessWidget {
@@ -120,12 +121,11 @@ abstract class FFCard extends StatelessWidget {
                         left: dateOffset,
                         bottom: 49,
                         width: 700,
-                        child: const Text(
+                        child: Text(
                           '1-3 SEPTEMBER - STOCKHOLM',
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                             fontSize: 24.03,
-                            fontFamily: 'Futura',
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),

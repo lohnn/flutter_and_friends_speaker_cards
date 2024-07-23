@@ -102,7 +102,7 @@ enum PreMadeSpeakerCards {
   ),
   simon(
     personName: 'Simon Auer',
-    title: 'CEO',
+    title: 'CEO at marqably',
     photo: 'Simon Auer.jpg',
     talk: 'Quick Wins - how to make your app more accessible',
     socialText: '@SimonEritsch',
