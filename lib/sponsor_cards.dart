@@ -46,6 +46,16 @@ enum SponsorCards {
     logo: 'done.png',
     url: 'https://doneservices.se',
   ),
+  appshack(
+    name: 'Appshack',
+    logo: 'svg/appshack.svg',
+    url: 'https://appshack.se/',
+  ),
+  dcm(
+    name: 'DCM',
+    logo: 'svg/dcm.svg',
+    url: 'https://dcm.dev/',
+  ),
   ;
 
   final String name;
