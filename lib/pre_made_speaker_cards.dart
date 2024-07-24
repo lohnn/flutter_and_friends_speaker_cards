@@ -96,7 +96,8 @@ enum PreMadeSpeakerCards {
     personName: 'Michał Gapiński',
     title: 'Founder and Software Engineer',
     photo: 'Michał Gapiński.png',
-    talk: 'Embedded Flutter on Raspberry Pi 5: Simplification of Daily E-Commerce Operations',
+    talk:
+        'Embedded Flutter on Raspberry Pi 5: Simplification of Daily E-Commerce Operations',
     socialText: '@mikegapinski',
     socialUrl: 'https://twitter.com/mikegapinski',
   ),
@@ -115,6 +116,58 @@ enum PreMadeSpeakerCards {
     talk: 'How big are macros really?',
     socialText: '@wolfenrain',
     socialUrl: 'https://twitter.com/wolfenrain',
+  ),
+  alexandre(
+    personName: 'Alexandre Moureaux',
+    title: 'Performance Expert at BAM',
+    photo: 'Alexandre Moureaux.jpeg',
+    talk: 'Flutter & Threads',
+    socialText: '@almouro',
+    socialUrl: 'https://twitter.com/almouro',
+  ),
+  // TODO: This one is double (support it!)
+  lucas(
+    personName: 'Lucas Josefiak & Jens',
+    title: 'Co-Founder & CEO of Widgetbook',
+    photo: 'Lucas Josefiak.png',
+    talk:
+        'Simplify Design Systems and Designer/Developer Collaboration with Widgetbook',
+    socialText: '@LucasJosefiak',
+    socialUrl: 'https://twitter.com/LucasJosefiak',
+  ),
+  // TODO: This one is double (support it!)
+  mateusz(
+    personName: 'Mateusz Wojtczak & Julia',
+    title: 'Head of Mobile at LeanCode',
+    photo: 'Mateusz Wojtczak.jpg',
+    talk: "Let's test it with Patrol!",
+    socialText: '@matiwojt & @julia_d_borko',
+    socialUrl: 'https://twitter.com/@matiwojt',
+  ),
+  // TODO: This one is double (support it!)
+  moritz(
+    personName: 'Moritz Theis & Payam Zahedi',
+    title: 'CEO at Snapp X',
+    photo: 'Moritz Theis.JPG', // & Payam Zahedi.png',
+    talk: 'Beyond Mobile: Powering Embedded Devices with Flutter',
+    socialText: '@MoritzTheis',
+    socialUrl: 'https://twitter.com/MoritzTheis',
+  ),
+  raouf(
+    personName: 'Raouf Rahiche',
+    title: 'Software Engineer at EasyA',
+    photo: 'Raouf Rahiche.jpeg',
+    talk: 'A closer look at the blur effect in Flutter',
+    socialText: '@raoufrahiche',
+    socialUrl: 'https://x.com/raoufrahiche',
+  ),
+  cagatay(
+    personName: 'Çağatay Ulusoy',
+    title: 'Flutter Competence Lead at Wolt',
+    photo: 'Çağatay Ulusoy.jpg',
+    talk: 'Advanced Flutter Navigation: Mastering Declarative Navigation',
+    socialText: '@ulusoyapps',
+    socialUrl: 'https://twitter.com/ulusoyapps',
   ),
   ;
 

@@ -56,6 +56,11 @@ enum SponsorCards {
     logo: 'svg/dcm.svg',
     url: 'https://dcm.dev/',
   ),
+  aws(
+    name: 'AWS Amplify',
+    logo: 'amplify.png',
+    url: 'https://aws.amazon.com/amplify/',
+  ),
   ;
 
   final String name;
