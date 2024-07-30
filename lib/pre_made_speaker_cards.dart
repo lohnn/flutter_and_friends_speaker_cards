@@ -126,10 +126,21 @@ enum PreMadeSpeakerCards {
     socialUrl: 'https://twitter.com/almouro',
   ),
   // TODO: This one is double (support it!)
+  jochum2(
+    personName: 'Jochum van der Ploeg & Mike Diarmyd',
+    title: 'TODO',
+    photo: 'Jochum van der Ploeg.jpeg',
+    //Mike Diarmid.jpg
+    talk: 'Learn how to build real-time games with Flutter and Dart Frog',
+    socialText: '@wolfenrain && TODO',
+    socialUrl: 'https://twitter.com/wolfenrain && TODO',
+  ),
+  // TODO: This one is double (support it!)
   lucas(
     personName: 'Lucas Josefiak & Jens',
     title: 'Co-Founder & CEO of Widgetbook',
     photo: 'Lucas Josefiak.png',
+    //&Jens Horstmann.png
     talk:
         'Simplify Design Systems and Designer/Developer Collaboration with Widgetbook',
     socialText: '@LucasJosefiak',
@@ -140,6 +151,7 @@ enum PreMadeSpeakerCards {
     personName: 'Mateusz Wojtczak & Julia',
     title: 'Head of Mobile at LeanCode',
     photo: 'Mateusz Wojtczak.jpg',
+    // Julia Borkowska.jpg
     talk: "Let's test it with Patrol!",
     socialText: '@matiwojt & @julia_d_borko',
     socialUrl: 'https://twitter.com/@matiwojt',
@@ -148,7 +160,8 @@ enum PreMadeSpeakerCards {
   moritz(
     personName: 'Moritz Theis & Payam Zahedi',
     title: 'CEO at Snapp X',
-    photo: 'Moritz Theis.JPG', // & Payam Zahedi.png',
+    photo: 'Moritz Theis.JPG',
+    // & Payam Zahedi.png',
     talk: 'Beyond Mobile: Powering Embedded Devices with Flutter',
     socialText: '@MoritzTheis',
     socialUrl: 'https://twitter.com/MoritzTheis',
@@ -168,6 +181,30 @@ enum PreMadeSpeakerCards {
     talk: 'Advanced Flutter Navigation: Mastering Declarative Navigation',
     socialText: '@ulusoyapps',
     socialUrl: 'https://twitter.com/ulusoyapps',
+  ),
+  alfredo(
+    personName: 'Alfredo Bautista Santos',
+    title: 'Flutter developer at Greenflux',
+    photo: 'Alfredo Bautista Santos.png',
+    talk: 'Flutter + Gemini: Your AI App Development Launchpad',
+    socialText: '@alfredobs97',
+    socialUrl: 'https://twitter.com/alfredobs97',
+  ),
+  muhammed(
+    personName: 'Muhammed Salih Güler',
+    title: 'Senior Developer Advocate at AWS',
+    photo: 'Muhammed Salih Güler.png',
+    talk: 'Building a Cloud-Powered Diary Application with Flutter',
+    socialText: '@salihgueler',
+    socialUrl: 'https://twitter.com/salihgueler',
+  ),
+  sasha(
+    personName: 'Sasha Denisov',
+    title: 'Chief Software Engineer at EPAM',
+    photo: 'Sasha Denisov.jpg',
+    talk: 'Porting your mobile app to TV platforms',
+    socialText: 'https://www.linkedin.com/in/aleks-denisov/',
+    socialUrl: 'https://www.linkedin.com/in/aleks-denisov/',
   ),
   ;
 
