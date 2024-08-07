@@ -2,6 +2,7 @@ import 'package:ff_speaker_cards/ff_card/speaker_card.dart';
 import 'package:ff_speaker_cards/ff_card/sponsor_card.dart';
 import 'package:ff_speaker_cards/pre_made_speaker_cards.dart';
 import 'package:ff_speaker_cards/social.dart';
+import 'package:ff_speaker_cards/sponsor_cards.dart';
 import 'package:ff_speaker_cards/widgets/download_widget_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -48,13 +49,14 @@ abstract class FFCard extends StatelessWidget {
   }
 
   factory FFCard.sponsor({
+    required SponsorLevel sponsorLevel,
     required String name,
     required String logo,
     required String url,
   }) {
     return SponsorCard(
+      sponsorLevel: sponsorLevel,
       name: name,
-      type: 'Sponsor presentation',
       image: switch (logo) {
         final path when path.startsWith('svg/') => createCompatVectorGraphic(
             loader: AssetBytesLoader('assets/logos/$path'),

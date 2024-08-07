@@ -1,18 +1,19 @@
 import 'dart:ui' as ui;
 
 import 'package:ff_speaker_cards/ff_card/ff_card.dart';
+import 'package:ff_speaker_cards/sponsor_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class SponsorCard extends FFCard {
-  final String type;
   final Widget image;
   final String url;
+  final SponsorLevel sponsorLevel;
 
   const SponsorCard({
+    required this.sponsorLevel,
     required super.name,
-    required this.type,
     required this.image,
     super.key,
     required this.url,
@@ -38,7 +39,7 @@ class SponsorCard extends FFCard {
       width: boxConstraints.maxWidth,
       child: Center(
         child: Text(
-          'Sponsor presentation',
+          sponsorLevel.levelText,
           maxLines: 1,
           style: GoogleFonts.poppins(
             fontSize: 55,
