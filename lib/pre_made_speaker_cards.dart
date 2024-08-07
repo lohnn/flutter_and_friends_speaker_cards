@@ -5,7 +5,7 @@ enum PreMadeSpeakerCards {
   renan(
     Presentation(
       host: Host(
-        personName: 'Renan Araujo',
+        name: 'Renan Araujo',
         title: 'Software Engineer',
         photo: 'Renan Araujo.jpg',
         socialText: '@reNotANumber',
@@ -17,7 +17,7 @@ enum PreMadeSpeakerCards {
   pavel(
     Presentation(
       host: Host(
-        personName: 'Pavel Sulimau',
+        name: 'Pavel Sulimau',
         title: 'Lead Software Engineer',
         photo: 'Pavel Sulimau.jpeg',
         socialText: 'https://pasul.dev/',
@@ -29,7 +29,7 @@ enum PreMadeSpeakerCards {
   akanksha(
     Presentation(
       host: Host(
-        personName: 'Akanksha Singh',
+        name: 'Akanksha Singh',
         title: 'Software Engineer',
         photo: 'Akanksha Singh.jpg',
         socialText: '@coder_jedi',
@@ -41,7 +41,7 @@ enum PreMadeSpeakerCards {
   darja(
     Presentation(
       host: Host(
-        personName: 'Darja Orlova',
+        name: 'Darja Orlova',
         title: 'Creator of NativePal',
         photo: 'Darja Orlova.png',
         socialText: '@dariadroid',
@@ -54,7 +54,7 @@ enum PreMadeSpeakerCards {
   kilian(
     Presentation(
       host: Host(
-        personName: 'Kilian Schulte',
+        name: 'Kilian Schulte',
         title: 'Flutter Engineer',
         photo: 'Kilian Schulte.jpeg',
         socialText: '@schultek_dev',
@@ -66,7 +66,7 @@ enum PreMadeSpeakerCards {
   luan(
     Presentation(
       host: Host(
-        personName: 'Luan Nico',
+        name: 'Luan Nico',
         title: 'Software Craftsman',
         photo: 'Luan Nico.jpg',
         socialText: 'https://luan.xyz/',
@@ -78,7 +78,7 @@ enum PreMadeSpeakerCards {
   majid(
     Presentation(
       host: Host(
-        personName: 'Majid Hajian',
+        name: 'Majid Hajian',
         title: 'Author',
         photo: 'Majid Hajian.png',
         socialText: '@mhadaily',
@@ -90,7 +90,7 @@ enum PreMadeSpeakerCards {
   roaa(
     Presentation(
       host: Host(
-        personName: 'Roaa Khaddam',
+        name: 'Roaa Khaddam',
         title: 'Software Engineer, Flutter GDE',
         photo: 'Roaa Khaddam.png',
         socialText: '@roaakdm',
@@ -113,7 +113,7 @@ enum PreMadeSpeakerCards {
   slava(
     Presentation(
       host: Host(
-        personName: 'Vyacheslav "Slava" Egorov',
+        name: 'Vyacheslav "Slava" Egorov',
         title: 'Uber-TL of Dart',
         photo: 'Slava Egorov.jpg',
         socialText: '@mraleph',
@@ -126,7 +126,7 @@ enum PreMadeSpeakerCards {
   craig(
     Presentation(
       host: Host(
-        personName: 'Craig Labenz',
+        name: 'Craig Labenz',
         title: 'Developer Relations Engineer at Google',
         photo: 'Craig.jpeg',
         socialText: '@craig_labenz',
@@ -138,7 +138,7 @@ enum PreMadeSpeakerCards {
   michal(
     Presentation(
       host: Host(
-        personName: 'Michał Gapiński',
+        name: 'Michał Gapiński',
         title: 'Founder and Software Engineer',
         photo: 'Michał Gapiński.png',
         socialText: '@mikegapinski',
@@ -151,7 +151,7 @@ enum PreMadeSpeakerCards {
   simon(
     Presentation(
       host: Host(
-        personName: 'Simon Auer',
+        name: 'Simon Auer',
         title: 'CEO at marqably',
         photo: 'Simon Auer.jpg',
         socialText: '@SimonEritsch',
@@ -163,7 +163,7 @@ enum PreMadeSpeakerCards {
   jochum(
     Presentation(
       host: Host(
-        personName: 'Jochum van der Ploeg',
+        name: 'Jochum van der Ploeg',
         title: 'Senior Open Source Engineer at Very Good Ventures',
         photo: 'Jochum van der Ploeg.jpeg',
         socialText: '@wolfenrain',
@@ -175,7 +175,7 @@ enum PreMadeSpeakerCards {
   alexandre(
     Presentation(
       host: Host(
-        personName: 'Alexandre Moureaux',
+        name: 'Alexandre Moureaux',
         title: 'Performance Expert at BAM',
         photo: 'Alexandre Moureaux.jpeg',
         socialText: '@almouro',
@@ -184,60 +184,80 @@ enum PreMadeSpeakerCards {
       talkTitle: 'Flutter & Threads',
     ),
   ),
-  // TODO: This one is double (support it!)
   jochum2(
     Workshop(
       host: Host(
-        personName: 'Jochum van der Ploeg & Mike Diarmyd',
-        title: 'TODO',
+        name: 'Jochum van der Ploeg',
+        title: 'Senior Open Source Engineer at Very Good Ventures',
         photo: 'Jochum van der Ploeg.jpeg',
-        //Mike Diarmid.jpg // TODO: He changed to someone else.
-        socialText: '@wolfenrain && TODO',
-        socialUrl: 'https://twitter.com/wolfenrain && TODO',
+        socialText: '@wolfenrain',
+        socialUrl: 'https://twitter.com/wolfenrain',
+      ),
+      coHost: Host(
+        name: 'Mike Diarmid',
+        title: 'CTO & Co-Founder @ Invertase',
+        photo: 'Mike Diarmid.jpg',
+        socialText: '@mikediarmid',
+        socialUrl: 'https://twitter.com/mikediarmid',
       ),
       talkTitle:
           'Learn how to build real-time games with Flutter and Dart Frog',
     ),
   ),
-  // TODO: This one is double (support it!)
   lucas(
     Workshop(
       host: Host(
-        personName: 'Lucas Josefiak & Jens',
+        name: 'Lucas Josefiak & Jens',
         title: 'Co-Founder & CEO of Widgetbook',
         photo: 'Lucas Josefiak.png',
-        //&Jens Horstmann.png
         socialText: '@LucasJosefiak',
         socialUrl: 'https://twitter.com/LucasJosefiak',
+      ),
+      coHost: Host(
+        name: 'Jens Horstmann',
+        title: 'Co-Founder & CTO of Widgetbook',
+        photo: 'Jens Horstmann.png',
+        socialText: '@jens_hor',
+        socialUrl: 'https://twitter.com/jens_hor',
       ),
       talkTitle:
           'Simplify Design Systems and Designer/Developer Collaboration with Widgetbook',
     ),
   ),
-  // TODO: This one is double (support it!)
   mateusz(
     Workshop(
       host: Host(
-        personName: 'Mateusz Wojtczak & Julia',
+        name: 'Mateusz Wojtczak',
         title: 'Head of Mobile at LeanCode',
         photo: 'Mateusz Wojtczak.jpg',
-        // Julia Borkowska.jpg
-        socialText: '@matiwojt & @julia_d_borko',
+        socialText: '@matiwojt',
         socialUrl: 'https://twitter.com/@matiwojt',
+      ),
+      coHost: Host(
+        name: 'Julia Borkowska',
+        title: '',
+        photo: 'Julia Borkowska.jpg',
+        socialText: '@julia_d_borko',
+        socialUrl: 'https://twitter.com/julia_d_borko',
       ),
       talkTitle: "Let's test it with Patrol!",
     ),
   ),
-  // TODO: This one is double (support it!)
   moritz(
     Workshop(
       host: Host(
-        personName: 'Moritz Theis & Payam Zahedi',
+        name: 'Moritz Theis & Payam Zahedi',
         title: 'CEO at Snapp X',
         photo: 'Moritz Theis.JPG',
-        // & Payam Zahedi.png',
         socialText: '@MoritzTheis',
         socialUrl: 'https://twitter.com/MoritzTheis',
+      ),
+      coHost: Host(
+        name: 'Payam Zahedi',
+        title: 'Senior Software Engineer at Snapp X',
+        photo: 'Payam Zahedi.png',
+        socialText: '@payamzahedi95',
+        socialUrl: 'https://twitter.com/payamzahedi95',
       ),
       talkTitle: 'Beyond Mobile: Powering Embedded Devices with Flutter',
     ),
@@ -245,7 +265,7 @@ enum PreMadeSpeakerCards {
   raouf(
     Presentation(
       host: Host(
-        personName: 'Raouf Rahiche',
+        name: 'Raouf Rahiche',
         title: 'Software Engineer at EasyA',
         photo: 'Raouf Rahiche.jpeg',
         socialText: '@raoufrahiche',
@@ -257,7 +277,7 @@ enum PreMadeSpeakerCards {
   cagatay(
     Workshop(
       host: Host(
-        personName: 'Çağatay Ulusoy',
+        name: 'Çağatay Ulusoy',
         title: 'Flutter Competence Lead at Wolt',
         photo: 'Çağatay Ulusoy.jpg',
         socialText: '@ulusoyapps',
@@ -270,7 +290,7 @@ enum PreMadeSpeakerCards {
   alfredo(
     Workshop(
       host: Host(
-        personName: 'Alfredo Bautista Santos',
+        name: 'Alfredo Bautista Santos',
         title: 'Flutter developer at Greenflux',
         photo: 'Alfredo Bautista Santos.png',
         socialText: '@alfredobs97',
@@ -282,7 +302,7 @@ enum PreMadeSpeakerCards {
   muhammed(
     Workshop(
       host: Host(
-        personName: 'Muhammed Salih Güler',
+        name: 'Muhammed Salih Güler',
         title: 'Senior Developer Advocate at AWS',
         photo: 'Muhammed Salih Güler.png',
         socialText: '@salihgueler',
@@ -294,7 +314,7 @@ enum PreMadeSpeakerCards {
   sasha(
     Workshop(
       host: Host(
-        personName: 'Sasha Denisov',
+        name: 'Sasha Denisov',
         title: 'Chief Software Engineer at EPAM',
         photo: 'Sasha Denisov.jpg',
         socialText: 'https://www.linkedin.com/in/aleks-denisov/',
@@ -306,7 +326,7 @@ enum PreMadeSpeakerCards {
   dominik(
     Presentation(
       host: Host(
-        personName: 'Dominik Roszkowski',
+        name: 'Dominik Roszkowski',
         title: 'Tech Lead at Visible, GDE in Flutter',
         photo: 'Dominik Roszkowski.jpeg',
         socialText: '@OrestesGaolin',
@@ -325,14 +345,14 @@ enum PreMadeSpeakerCards {
 }
 
 final class Host {
-  final String personName;
+  final String name;
   final String title;
   final String photo;
   final String? socialText;
   final String? socialUrl;
 
   const Host({
-    required this.personName,
+    required this.name,
     required this.title,
     required this.photo,
     required this.socialText,
@@ -350,10 +370,12 @@ final class Host {
 
 sealed class Talk {
   final Host host;
+  final Host? coHost;
   final String talkTitle;
 
   const Talk({
     required this.host,
+    required this.coHost,
     required this.talkTitle,
   });
 
@@ -363,6 +385,7 @@ sealed class Talk {
 final class Presentation extends Talk {
   const Presentation({
     required super.host,
+    super.coHost,
     required super.talkTitle,
   });
 
@@ -373,6 +396,7 @@ final class Presentation extends Talk {
 final class Workshop extends Talk {
   const Workshop({
     required super.host,
+    super.coHost,
     required super.talkTitle,
   });
 
