@@ -1,5 +1,6 @@
 import 'package:ff_speaker_cards/ff_card/speaker_card.dart';
 import 'package:ff_speaker_cards/ff_card/sponsor_card.dart';
+import 'package:ff_speaker_cards/pre_made_speaker_cards.dart';
 import 'package:ff_speaker_cards/social.dart';
 import 'package:ff_speaker_cards/widgets/download_widget_button.dart';
 import 'package:flutter/foundation.dart';
@@ -33,20 +34,16 @@ abstract class FFCard extends StatelessWidget {
   }
 
   factory FFCard.speaker({
-    required String name,
-    required String title,
-    required String photo,
-    required String talk,
-    Social? social,
+    required Talk talk,
   }) {
     return SpeakerCard(
       type: 'SPEAKER PROFILE',
-      name: name,
-      title: title,
-      image: Image.asset('assets/photos/$photo'),
-      category: 'Talk',
-      categoryDescription: talk,
-      social: social,
+      name: talk.personName,
+      title: talk.title,
+      image: Image.asset('assets/photos/${talk.photo}'),
+      category: talk.category,
+      categoryDescription: talk.talkTitle,
+      social: talk.social,
     );
   }
 

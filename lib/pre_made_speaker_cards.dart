@@ -273,22 +273,7 @@ enum PreMadeSpeakerCards {
 
   const PreMadeSpeakerCards(this.talk);
 
-  FFCard get card {
-    final social = switch ((talk.socialText, talk.socialUrl)) {
-      (final text?, final url?) => Social(
-          text: text,
-          url: Uri.parse(url),
-        ),
-      _ => null,
-    };
-    return FFCard.speaker(
-      name: talk.personName,
-      title: talk.title,
-      photo: talk.photo,
-      talk: talk.talkTitle,
-      social: social,
-    );
-  }
+  FFCard get card => FFCard.speaker(talk: talk);
 }
 
 sealed class Talk {
@@ -307,6 +292,16 @@ sealed class Talk {
     required this.socialText,
     required this.socialUrl,
   });
+
+  String get category;
+
+  Social? get social => switch ((socialText, socialUrl)) {
+        (final text?, final url?) => Social(
+            text: text,
+            url: Uri.parse(url),
+          ),
+        _ => null,
+      };
 }
 
 final class Presentation extends Talk {
@@ -318,6 +313,9 @@ final class Presentation extends Talk {
     required super.socialText,
     required super.socialUrl,
   });
+
+  @override
+  String get category => 'Talk';
 }
 
 final class Workshop extends Talk {
@@ -329,4 +327,7 @@ final class Workshop extends Talk {
     required super.socialText,
     required super.socialUrl,
   });
+
+  @override
+  String get category => 'Workshop';
 }
