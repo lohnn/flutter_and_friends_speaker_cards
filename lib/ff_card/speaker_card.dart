@@ -24,6 +24,9 @@ class SpeakerCard extends FFCard {
   });
 
   @override
+  Offset get ffLogoOffset => const Offset(55.85, 331.94);
+
+  @override
   Object get tag => '$type$name$title$social$category$categoryDescription';
 
   Widget line(double x1, double y, double x2) {

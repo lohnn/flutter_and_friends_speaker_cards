@@ -74,7 +74,7 @@ abstract class FFCard extends StatelessWidget {
 
   double get dateOffset => 45;
 
-  Offset get ffLogoOffset => const Offset(55.85, 331.94);
+  Offset get ffLogoOffset;
 
   Object get tag;
 
