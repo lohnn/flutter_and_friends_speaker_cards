@@ -75,7 +75,7 @@ abstract class FFCard extends StatelessWidget {
 
   double get dateOffset => 45;
 
-  Offset get ffLogoOffset => const Offset(331.94, 55.85);
+  Offset get ffLogoOffset => const Offset(55.85, 331.94);
 
   Object get tag;
 
@@ -139,8 +139,8 @@ abstract class FFCard extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        top: ffLogoOffset.dx,
-                        left: ffLogoOffset.dy,
+                        top: ffLogoOffset.dy,
+                        left: ffLogoOffset.dx,
                         child: createCompatVectorGraphic(
                           loader: const AssetBytesLoader(
                             'assets/svgs/ff_logo.svg',

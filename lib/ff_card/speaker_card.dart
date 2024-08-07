@@ -132,6 +132,7 @@ class SpeakerCard extends FFCard {
             fit: BoxFit.cover,
             child: ColoredBox(
               color: const Color(0xff8369F6),
+              // TODO: Support multiple images
               child: image,
             ),
           ),
