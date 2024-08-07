@@ -39,12 +39,12 @@ abstract class FFCard extends StatelessWidget {
   }) {
     return SpeakerCard(
       type: 'SPEAKER PROFILE',
-      name: talk.personName,
-      title: talk.title,
-      image: Image.asset('assets/photos/${talk.photo}'),
+      name: talk.host.personName,
+      title: talk.host.title,
+      image: Image.asset('assets/photos/${talk.host.photo}'),
       category: talk.category,
       categoryDescription: talk.talkTitle,
-      social: talk.social,
+      social: talk.host.social,
     );
   }
 
