@@ -44,28 +44,29 @@ class MainApp extends StatelessWidget {
                     final card = cards[index];
                     final controller = WidgetStatesController();
                     return ValueListenableBuilder(
-                        valueListenable: controller,
-                        child: Stack(
-                          children: [
-                            Positioned.fill(child: card),
-                            Material(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                statesController: controller,
-                                onTap: () => context.go('/${card.name}'),
-                              ),
+                      valueListenable: controller,
+                      child: Stack(
+                        children: [
+                          Positioned.fill(child: card),
+                          Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              statesController: controller,
+                              onTap: () => context.go('/${Uri.encodeComponent(card.name)}'),
                             ),
-                          ],
-                        ),
-                        builder: (context, states, child) {
-                          return Card(
-                            clipBehavior: Clip.antiAlias,
-                            margin: EdgeInsets.zero,
-                            elevation:
-                                states.contains(WidgetState.hovered) ? 0 : 12,
-                            child: child,
-                          );
-                        });
+                          ),
+                        ],
+                      ),
+                      builder: (context, states, child) {
+                        return Card(
+                          clipBehavior: Clip.antiAlias,
+                          margin: EdgeInsets.zero,
+                          elevation:
+                              states.contains(WidgetState.hovered) ? 0 : 12,
+                          child: child,
+                        );
+                      },
+                    );
                   },
                 ),
               );

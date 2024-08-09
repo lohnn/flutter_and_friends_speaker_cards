@@ -10,10 +10,12 @@ class SponsorCard extends FFCard {
   final Widget image;
   final String url;
   final SponsorLevel sponsorLevel;
+  @override
+  final String name;
 
   const SponsorCard({
     required this.sponsorLevel,
-    required super.name,
+    required this.name,
     required this.image,
     super.key,
     required this.url,

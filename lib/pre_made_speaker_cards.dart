@@ -1,5 +1,6 @@
 import 'package:ff_speaker_cards/ff_card/ff_card.dart';
 import 'package:ff_speaker_cards/social.dart';
+import 'package:flutter/widgets.dart';
 
 enum PreMadeSpeakerCards {
   renan(
@@ -184,84 +185,6 @@ enum PreMadeSpeakerCards {
       talkTitle: 'Flutter & Threads',
     ),
   ),
-  jochum2(
-    Workshop(
-      host: Host(
-        name: 'Jochum van der Ploeg',
-        title: 'Senior Open Source Engineer at Very Good Ventures',
-        photo: 'Jochum van der Ploeg.jpeg',
-        socialText: '@wolfenrain',
-        socialUrl: 'https://twitter.com/wolfenrain',
-      ),
-      coHost: Host(
-        name: 'Mike Diarmid',
-        title: 'CTO & Co-Founder @ Invertase',
-        photo: 'Mike Diarmid.jpg',
-        socialText: '@mikediarmid',
-        socialUrl: 'https://twitter.com/mikediarmid',
-      ),
-      talkTitle:
-          'Learn how to build real-time games with Flutter and Dart Frog',
-    ),
-  ),
-  lucas(
-    Workshop(
-      host: Host(
-        name: 'Lucas Josefiak & Jens',
-        title: 'Co-Founder & CEO of Widgetbook',
-        photo: 'Lucas Josefiak.png',
-        socialText: '@LucasJosefiak',
-        socialUrl: 'https://twitter.com/LucasJosefiak',
-      ),
-      coHost: Host(
-        name: 'Jens Horstmann',
-        title: 'Co-Founder & CTO of Widgetbook',
-        photo: 'Jens Horstmann.png',
-        socialText: '@jens_hor',
-        socialUrl: 'https://twitter.com/jens_hor',
-      ),
-      talkTitle:
-          'Simplify Design Systems and Designer/Developer Collaboration with Widgetbook',
-    ),
-  ),
-  mateusz(
-    Workshop(
-      host: Host(
-        name: 'Mateusz Wojtczak',
-        title: 'Head of Mobile at LeanCode',
-        photo: 'Mateusz Wojtczak.jpg',
-        socialText: '@matiwojt',
-        socialUrl: 'https://twitter.com/@matiwojt',
-      ),
-      coHost: Host(
-        name: 'Julia Borkowska',
-        title: '',
-        photo: 'Julia Borkowska.jpg',
-        socialText: '@julia_d_borko',
-        socialUrl: 'https://twitter.com/julia_d_borko',
-      ),
-      talkTitle: "Let's test it with Patrol!",
-    ),
-  ),
-  moritz(
-    Workshop(
-      host: Host(
-        name: 'Moritz Theis & Payam Zahedi',
-        title: 'CEO at Snapp X',
-        photo: 'Moritz Theis.JPG',
-        socialText: '@MoritzTheis',
-        socialUrl: 'https://twitter.com/MoritzTheis',
-      ),
-      coHost: Host(
-        name: 'Payam Zahedi',
-        title: 'Senior Software Engineer at Snapp X',
-        photo: 'Payam Zahedi.png',
-        socialText: '@payamzahedi95',
-        socialUrl: 'https://twitter.com/payamzahedi95',
-      ),
-      talkTitle: 'Beyond Mobile: Powering Embedded Devices with Flutter',
-    ),
-  ),
   raouf(
     Presentation(
       host: Host(
@@ -335,6 +258,84 @@ enum PreMadeSpeakerCards {
       talkTitle: 'Native Background Processing with Flutter',
     ),
   ),
+  jochum2(
+    Workshop(
+      host: Host(
+        name: 'Jochum van der Ploeg',
+        title: 'Senior Open Source Engineer at Very Good Ventures',
+        photo: 'Jochum van der Ploeg.jpeg',
+        socialText: '@wolfenrain',
+        socialUrl: 'https://twitter.com/wolfenrain',
+      ),
+      coHost: Host(
+        name: 'Mike Diarmid',
+        title: 'CTO & Co-Founder @ Invertase',
+        photo: 'Mike Diarmid.jpg',
+        socialText: '@mikediarmid',
+        socialUrl: 'https://twitter.com/mikediarmid',
+      ),
+      talkTitle:
+          'Learn how to build real-time games with Flutter and Dart Frog',
+    ),
+  ),
+  lucas(
+    Workshop(
+      host: Host(
+        name: 'Lucas Josefiak & Jens',
+        title: 'Co-Founder & CEO of Widgetbook',
+        photo: 'Lucas Josefiak.png',
+        socialText: '@LucasJosefiak',
+        socialUrl: 'https://twitter.com/LucasJosefiak',
+      ),
+      coHost: Host(
+        name: 'Jens Horstmann',
+        title: 'Co-Founder & CTO of Widgetbook',
+        photo: 'Jens Horstmann.png',
+        socialText: '@jens_hor',
+        socialUrl: 'https://twitter.com/jens_hor',
+      ),
+      talkTitle:
+          'Simplify Design Systems and Designer/Developer Collaboration with Widgetbook',
+    ),
+  ),
+  mateusz(
+    Workshop(
+      host: Host(
+        name: 'Mateusz Wojtczak',
+        title: 'Head of Mobile at LeanCode',
+        photo: 'Mateusz Wojtczak.jpg',
+        socialText: '@matiwojt',
+        socialUrl: 'https://twitter.com/@matiwojt',
+      ),
+      coHost: Host(
+        name: 'Julia Borkowska',
+        title: 'Head of QA at LeanCode',
+        photo: 'Julia Borkowska.jpg',
+        socialText: '@julia_d_borko',
+        socialUrl: 'https://twitter.com/julia_d_borko',
+      ),
+      talkTitle: "Let's test it with Patrol!",
+    ),
+  ),
+  moritz(
+    Workshop(
+      host: Host(
+        name: 'Moritz Theis & Payam Zahedi',
+        title: 'CEO at Snapp X',
+        photo: 'Moritz Theis.JPG',
+        socialText: '@MoritzTheis',
+        socialUrl: 'https://twitter.com/MoritzTheis',
+      ),
+      coHost: Host(
+        name: 'Payam Zahedi',
+        title: 'Senior Software Engineer at Snapp X',
+        photo: 'Payam Zahedi.png',
+        socialText: '@payamzahedi95',
+        socialUrl: 'https://twitter.com/payamzahedi95',
+      ),
+      talkTitle: 'Beyond Mobile: Powering Embedded Devices with Flutter',
+    ),
+  ),
   ;
 
   final Talk talk;
@@ -359,6 +360,13 @@ final class Host {
     required this.socialUrl,
   });
 
+  @override
+  String toString() {
+    return 'Host{name: $name, title: $title, photo: $photo, socialText: $socialText, socialUrl: $socialUrl}';
+  }
+
+  Image get image => Image.asset('assets/photos/$photo');
+
   Social? get social => switch ((socialText, socialUrl)) {
         (final text?, final url?) => Social(
             text: text,
@@ -380,6 +388,11 @@ sealed class Talk {
   });
 
   String get category;
+
+  @override
+  String toString() {
+    return 'Talk{host: $host, coHost: $coHost, talkTitle: $talkTitle}';
+  }
 }
 
 final class Presentation extends Talk {
