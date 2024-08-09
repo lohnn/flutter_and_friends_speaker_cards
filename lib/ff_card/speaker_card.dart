@@ -1,30 +1,29 @@
 import 'package:ff_speaker_cards/ff_card/ff_card.dart';
 import 'package:ff_speaker_cards/ff_card/ff_card_middle_section.dart';
-import 'package:ff_speaker_cards/social.dart';
+import 'package:ff_speaker_cards/pre_made_speaker_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SpeakerCard extends FFCard {
-  final Image image;
-  final String type;
-  final String title;
-  final Social? social;
-  final String category;
-  final String categoryDescription;
+  final Host host;
+  final String talkCategory;
+  final String talkTitle;
+
+  @override
+  String get name => host.name;
 
   const SpeakerCard({
-    required this.image,
-    required this.type,
-    required super.name,
-    required this.title,
-    this.social,
-    required this.category,
-    required this.categoryDescription,
+    required this.host,
+    required this.talkCategory,
+    required this.talkTitle,
     super.key,
   });
 
   @override
-  Object get tag => '$type$name$title$social$category$categoryDescription';
+  Offset get ffLogoOffset => const Offset(55.85, 331.94);
+
+  @override
+  Object get tag => 'SPEAKER PROFILE$name${host}Talk$talkCategory$talkTitle';
 
   Widget line(double x1, double y, double x2) {
     return Positioned(
@@ -71,7 +70,7 @@ class SpeakerCard extends FFCard {
       height: 104,
       child: Center(
         child: Text(
-          type.toUpperCase(),
+          'SPEAKER PROFILE',
           style: GoogleFonts.sourceSans3(
             fontWeight: FontWeight.normal,
             letterSpacing: 6.26,
@@ -87,9 +86,9 @@ class SpeakerCard extends FFCard {
       width: 900 - 209 - 24,
       height: 104 + 104 + 36,
       child: FFCardMiddleSection(
-        name: name,
-        title: title,
-        social: social,
+        name: host.name,
+        title: host.title,
+        social: host.social,
       ),
     );
     yield Positioned(
@@ -98,7 +97,7 @@ class SpeakerCard extends FFCard {
       width: 900 - 160 - 24,
       height: 59,
       child: Text(
-        category,
+        talkCategory,
         maxLines: 1,
         style: GoogleFonts.sourceSans3(
           fontWeight: FontWeight.w700,
@@ -113,7 +112,7 @@ class SpeakerCard extends FFCard {
       width: 900 - 160 - 24,
       height: 204,
       child: Text(
-        categoryDescription,
+        talkTitle,
         style: GoogleFonts.sourceSans3(
           fontWeight: FontWeight.w600,
           fontSize: 47.12,
@@ -132,7 +131,7 @@ class SpeakerCard extends FFCard {
             fit: BoxFit.cover,
             child: ColoredBox(
               color: const Color(0xff8369F6),
-              child: image,
+              child: host.image,
             ),
           ),
         ),

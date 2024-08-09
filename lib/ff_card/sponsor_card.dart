@@ -1,18 +1,21 @@
 import 'dart:ui' as ui;
 
 import 'package:ff_speaker_cards/ff_card/ff_card.dart';
+import 'package:ff_speaker_cards/sponsor_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class SponsorCard extends FFCard {
-  final String type;
   final Widget image;
   final String url;
+  final SponsorLevel sponsorLevel;
+  @override
+  final String name;
 
   const SponsorCard({
-    required super.name,
-    required this.type,
+    required this.sponsorLevel,
+    required this.name,
     required this.image,
     super.key,
     required this.url,
@@ -25,7 +28,7 @@ class SponsorCard extends FFCard {
   double get dateOffset => 0;
 
   @override
-  Offset get ffLogoOffset => const Offset(200, 90);
+  Offset get ffLogoOffset => const Offset(90, 200);
 
   @override
   Iterable<Widget> buildRightSide(
@@ -38,7 +41,7 @@ class SponsorCard extends FFCard {
       width: boxConstraints.maxWidth,
       child: Center(
         child: Text(
-          'Sponsor presentation',
+          sponsorLevel.levelText,
           maxLines: 1,
           style: GoogleFonts.poppins(
             fontSize: 55,

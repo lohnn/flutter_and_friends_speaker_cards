@@ -1,6 +1,9 @@
+import 'package:ff_speaker_cards/ff_card/double_speaker_card.dart';
 import 'package:ff_speaker_cards/ff_card/speaker_card.dart';
 import 'package:ff_speaker_cards/ff_card/sponsor_card.dart';
+import 'package:ff_speaker_cards/pre_made_speaker_cards.dart';
 import 'package:ff_speaker_cards/social.dart';
+import 'package:ff_speaker_cards/sponsor_cards.dart';
 import 'package:ff_speaker_cards/widgets/download_widget_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +11,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vector_graphics/vector_graphics_compat.dart';
 
 abstract class FFCard extends StatelessWidget {
-  final String name;
+  String get name;
 
-  const FFCard({super.key, required this.name});
+  const FFCard({super.key});
 
   factory FFCard.attendee({
     required String name,
@@ -21,43 +24,50 @@ abstract class FFCard extends StatelessWidget {
     required String category,
     required String categoryDescription,
   }) {
-    return SpeakerCard(
-      type: 'SPEAKER PROFILE',
-      name: name,
-      title: title,
-      image: Image.network('assets/photos/$photo'),
-      category: 'Talk',
-      categoryDescription: 'Person stuff',
-      social: social,
-    );
+    // TODO: Support creating attendee cards again
+    throw UnimplementedError('Needs to be reimplemented');
+    // return SpeakerCard(
+    //   name: name,
+    //   title: title,
+    //   image: Image.network('assets/photos/$photo'),
+    //   category: 'Talk',
+    //   talkName: 'Person stuff',
+    //   social: social,
+    // );
   }
 
   factory FFCard.speaker({
-    required String name,
-    required String title,
-    required String photo,
-    required String talk,
-    Social? social,
+    required Talk talk,
   }) {
+    return switch (talk) {
+      Talk(:final coHost?) => DoubleSpeakerCard(
+          host: talk.host,
+          coHost: coHost,
+          talkCategory: talk.category,
+          talkTitle: talk.talkTitle,
+        ),
+      Talk() => SpeakerCard(
+          host: talk.host,
+          talkCategory: talk.category,
+          talkTitle: talk.talkTitle,
+        ),
+    };
     return SpeakerCard(
-      type: 'SPEAKER PROFILE',
-      name: name,
-      title: title,
-      image: Image.asset('assets/photos/$photo'),
-      category: 'Talk',
-      categoryDescription: talk,
-      social: social,
+      host: talk.host,
+      talkCategory: talk.category,
+      talkTitle: talk.talkTitle,
     );
   }
 
   factory FFCard.sponsor({
+    required SponsorLevel sponsorLevel,
     required String name,
     required String logo,
     required String url,
   }) {
     return SponsorCard(
+      sponsorLevel: sponsorLevel,
       name: name,
-      type: 'Sponsor presentation',
       image: switch (logo) {
         final path when path.startsWith('svg/') => createCompatVectorGraphic(
             loader: AssetBytesLoader('assets/logos/$path'),
@@ -75,7 +85,7 @@ abstract class FFCard extends StatelessWidget {
 
   double get dateOffset => 45;
 
-  Offset get ffLogoOffset => const Offset(331.94, 55.85);
+  Offset get ffLogoOffset;
 
   Object get tag;
 
@@ -139,8 +149,8 @@ abstract class FFCard extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        top: ffLogoOffset.dx,
-                        left: ffLogoOffset.dy,
+                        top: ffLogoOffset.dy,
+                        left: ffLogoOffset.dx,
                         child: createCompatVectorGraphic(
                           loader: const AssetBytesLoader(
                             'assets/svgs/ff_logo.svg',
