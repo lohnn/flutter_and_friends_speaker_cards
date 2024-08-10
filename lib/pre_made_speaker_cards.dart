@@ -97,7 +97,7 @@ enum PreMadeSpeakerCards {
         socialText: '@roaakdm',
         socialUrl: 'https://twitter.com/roaakdm',
       ),
-      talkTitle: 'Using Physics for Realistic Flutter Animations',
+      talkTitle: 'Code Meets Art: Flutter for Creative Coding',
     ),
   ),
   // communityPlan(
