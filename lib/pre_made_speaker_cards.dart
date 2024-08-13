@@ -133,7 +133,7 @@ enum PreMadeSpeakerCards {
         socialText: '@craig_labenz',
         socialUrl: 'https://x.com/craig_labenz',
       ),
-      talkTitle: 'Keynote speaker',
+      talkTitle: 'Keynote - Empathetic Flutter',
     ),
   ),
   michal(
