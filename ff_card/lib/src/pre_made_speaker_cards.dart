@@ -282,7 +282,7 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
   lucas(
     Workshop(
       host: Host(
-        name: 'Lucas Josefiak & Jens',
+        name: 'Lucas Josefiak',
         title: 'Co-Founder & CEO of Widgetbook',
         photo: 'Lucas Josefiak.png',
         socialText: '@LucasJosefiak',
