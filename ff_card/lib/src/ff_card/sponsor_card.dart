@@ -1,7 +1,7 @@
 import 'dart:ui' as ui;
 
-import 'package:ff_speaker_cards/ff_card/ff_card.dart';
-import 'package:ff_speaker_cards/sponsor_cards.dart';
+import 'package:ff_card/src/ff_card/ff_card.dart';
+import 'package:ff_card/src/sponsor_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -19,6 +19,7 @@ class SponsorCard extends FFCard {
     required this.image,
     super.key,
     required this.url,
+    super.allowDownload = false,
   });
 
   @override

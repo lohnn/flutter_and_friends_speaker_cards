@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:ff_speaker_cards/download_image/download_image.dart';
+import 'package:ff_card/src/download_image/download_image.dart';
 import 'package:file_picker/file_picker.dart';
 
 DownloadImage getInstance() => const DownloadImageNative();

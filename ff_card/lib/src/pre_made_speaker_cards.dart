@@ -1,8 +1,9 @@
-import 'package:ff_speaker_cards/ff_card/ff_card.dart';
-import 'package:ff_speaker_cards/social.dart';
+import 'package:ff_card/src/ff_card/ff_card.dart';
+import 'package:ff_card/src/pre_made_card_data.dart';
+import 'package:ff_card/src/social.dart';
 import 'package:flutter/widgets.dart';
 
-enum PreMadeSpeakerCards {
+enum PreMadeSpeakerCards implements PreMadeCardData {
   renan(
     Presentation(
       host: Host(
@@ -342,7 +343,17 @@ enum PreMadeSpeakerCards {
 
   const PreMadeSpeakerCards(this.talk);
 
-  FFCard get card => FFCard.speaker(talk: talk);
+  @override
+  String get name => switch (talk) {
+        Talk(coHost: _?) => talk.talkTitle,
+        Talk() => talk.host.name,
+      };
+
+  @override
+  FFCard cardWidget({bool allowDownload = false}) => FFCard.speaker(
+        talk: talk,
+        allowDownload: allowDownload,
+      );
 }
 
 final class Host {
@@ -365,7 +376,10 @@ final class Host {
     return 'Host{name: $name, title: $title, photo: $photo, socialText: $socialText, socialUrl: $socialUrl}';
   }
 
-  Image get image => Image.asset('assets/photos/$photo');
+  Image get image => Image.asset(
+        'assets/photos/$photo',
+        package: 'ff_card',
+      );
 
   Social? get social => switch ((socialText, socialUrl)) {
         (final text?, final url?) => Social(

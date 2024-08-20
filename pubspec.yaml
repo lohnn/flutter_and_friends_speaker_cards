@@ -7,18 +7,11 @@ environment:
   sdk: '>=3.4.0 <4.0.0'
 
 dependencies:
-  auto_size_text: ^3.0.0
-  file_picker: ^8.0.6
+  ff_card:
+    path: ff_card
   flutter:
     sdk: flutter
-  go_router: ^14.2.1
-  google_fonts: ^6.2.1
-  url_launcher: ^6.3.0
-  vector_graphics: ^1.1.11+1
-  web: ^0.5.1
-  vector_graphics_compiler: ^1.1.11+1
-  scale_photo_transformer:
-    path: scale_photo_transformer
+  go_router: ^14.2.3
 
 dev_dependencies:
   flutter_test:
@@ -27,15 +20,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/images/
-    - path: assets/logos/
-    - path: assets/photos/
-      transformers:
-        - package: scale_photo_transformer
-    - path: assets/logos/svg/
-      transformers:
-        - package: vector_graphics_compiler
-    - path: assets/svgs/
-      transformers:
-        - package: vector_graphics_compiler

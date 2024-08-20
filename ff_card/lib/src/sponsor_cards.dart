@@ -1,6 +1,6 @@
-import 'package:ff_speaker_cards/ff_card/ff_card.dart';
+import 'package:ff_card/ff_card.dart';
 
-enum SponsorCards {
+enum SponsorCards implements PreMadeCardData {
   flutter(
     name: 'Flutter',
     logo: 'flutter.png',
@@ -75,6 +75,7 @@ enum SponsorCards {
   ),
   ;
 
+  @override
   final String name;
   final String logo;
   final String url;
@@ -87,12 +88,14 @@ enum SponsorCards {
     required this.sponsorLevel,
   });
 
-  FFCard get card {
+  @override
+  FFCard cardWidget({bool allowDownload = false}) {
     return FFCard.sponsor(
       sponsorLevel: sponsorLevel,
       name: name,
       logo: logo,
       url: url,
+      allowDownload: allowDownload,
     );
   }
 }
