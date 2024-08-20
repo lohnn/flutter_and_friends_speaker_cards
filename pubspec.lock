@@ -329,7 +329,7 @@ packages:
     source: hosted
     version: "2.1.8"
   scale_photo_transformer:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       path: scale_photo_transformer
       relative: true
@@ -477,7 +477,7 @@ packages:
     source: hosted
     version: "1.1.11+1"
   vector_graphics_compiler:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: vector_graphics_compiler
       sha256: "12faff3f73b1741a36ca7e31b292ddeb629af819ca9efe9953b70bd63fc8cd81"
