@@ -1,0 +1,40 @@
+name: ff_card
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  auto_size_text: ^3.0.0
+  file_picker: ^8.1.2
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  url_launcher: ^6.3.0
+  vector_graphics: ^1.1.11+1
+  vector_graphics_compiler: ^1.1.11+1
+  scale_photo_transformer:
+    path: scale_photo_transformer
+  web: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - path: assets/logos/
+    - path: assets/photos/
+      transformers:
+        - package: scale_photo_transformer
+    - path: assets/logos/svg/
+      transformers:
+        - package: vector_graphics_compiler
+    - path: assets/svgs/
+      transformers:
+        - package: vector_graphics_compiler

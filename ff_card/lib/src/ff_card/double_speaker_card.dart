@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ff_speaker_cards/ff_card/ff_card.dart';
-import 'package:ff_speaker_cards/ff_card/ff_card_middle_section.dart';
-import 'package:ff_speaker_cards/pre_made_speaker_cards.dart';
+import 'package:ff_card/src/ff_card/ff_card.dart';
+import 'package:ff_card/src/ff_card/ff_card_middle_section.dart';
+import 'package:ff_card/src/pre_made_speaker_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,6 +19,7 @@ class DoubleSpeakerCard extends FFCard {
     required this.coHost,
     required this.talkCategory,
     required this.talkTitle,
+    super.allowDownload = false,
     super.key,
   });
 

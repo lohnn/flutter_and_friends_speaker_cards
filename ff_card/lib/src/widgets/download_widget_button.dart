@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:ff_speaker_cards/download_image/download_image.dart';
+import 'package:ff_card/src/download_image/download_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

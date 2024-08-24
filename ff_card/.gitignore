@@ -9,7 +9,6 @@
 .history
 .svn/
 migrate_working_dir/
-.firebase/
 
 # IntelliJ related
 *.iml
@@ -42,4 +41,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/ff_card/assets/fonts/Futura.ttc

@@ -1,7 +1,6 @@
-import 'package:ff_speaker_cards/extensions/string_extensions.dart';
-import 'package:ff_speaker_cards/ff_card/ff_card.dart';
+import 'package:ff_card/src/extensions/string_extensions.dart';
+import 'package:ff_card/src/ff_card/ff_card.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CreateCardScreen extends StatefulWidget {
   const CreateCardScreen({super.key});
@@ -131,16 +130,16 @@ class _CreateCardPageState extends State<CreateCardScreen> {
                   return;
                 }
 
-                context.go(
-                  Uri(path: '/card', queryParameters: {
-                    'image': image,
-                    'type': type,
-                    'name': name,
-                    'title': title,
-                    'category': category,
-                    'categoryDescription': categoryDescription,
-                  }).toString(),
-                );
+                // context.go(
+                //   Uri(path: '/card', queryParameters: {
+                //     'image': image,
+                //     'type': type,
+                //     'name': name,
+                //     'title': title,
+                //     'category': category,
+                //     'categoryDescription': categoryDescription,
+                //   }).toString(),
+                // );
               },
               child: const Text('YOLO create'),
             ),
