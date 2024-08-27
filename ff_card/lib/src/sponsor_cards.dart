@@ -73,6 +73,12 @@ enum SponsorCards implements PreMadeCardData {
     url: 'https://aws.amazon.com/amplify/',
     sponsorLevel: SponsorLevel.gold,
   ),
+  matpriskollen(
+    name: 'Matpriskollen',
+    logo: 'matpriskollen.png',
+    url: 'https://matpriskollen.se/',
+    sponsorLevel: SponsorLevel.silver,
+  ),
   ;
 
   @override

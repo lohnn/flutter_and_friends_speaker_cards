@@ -101,17 +101,19 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
       talkTitle: 'Code Meets Art: Flutter for Creative Coding',
     ),
   ),
-  // communityPlan(
-  //   Workshop(
-  //     personName: 'TBA',
-  //     title: '',
-  //     photo: '',
-  //     talkTitle:
-  //         'Flutter in the year 2044: Discussing a community plan for Flutter’s next 20 years',
-  //     socialText: '',
-  //     socialUrl: '',
-  //   ),
-  // ),
+  communityPlan(
+    Workshop(
+      host: Host(
+        name: 'Simon Lightfoot',
+        title: 'CTO @ DevAngels',
+        photo: 'Simon Lightfoot.jpeg',
+        socialText: '@devangelslondon',
+        socialUrl: 'https://twitter.com/devangelslondon',
+      ),
+      talkTitle:
+          'Flutter in the year 2044: Discussing a community plan for Flutter’s next 20 years',
+    ),
+  ),
   slava(
     Presentation(
       host: Host(
@@ -282,7 +284,7 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
   lucas(
     Workshop(
       host: Host(
-        name: 'Lucas Josefiak & Jens',
+        name: 'Lucas Josefiak',
         title: 'Co-Founder & CEO of Widgetbook',
         photo: 'Lucas Josefiak.png',
         socialText: '@LucasJosefiak',
