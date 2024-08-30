@@ -17,6 +17,7 @@ class SpeakerCard extends FFCard {
     required this.talkCategory,
     required this.talkTitle,
     super.allowDownload = false,
+    required super.downloadImageKey,
     super.key,
   });
 

@@ -1,4 +1,5 @@
 import 'package:ff_card/ff_card.dart';
+import 'package:flutter/widgets.dart';
 
 enum SponsorCards implements PreMadeCardData {
   flutter(
@@ -95,13 +96,17 @@ enum SponsorCards implements PreMadeCardData {
   });
 
   @override
-  FFCard cardWidget({bool allowDownload = false}) {
+  FFCard cardWidget({
+    bool allowDownload = false,
+    GlobalKey? downloadKey,
+  }) {
     return FFCard.sponsor(
       sponsorLevel: sponsorLevel,
       name: name,
       logo: logo,
       url: url,
       allowDownload: allowDownload,
+      downloadKey: downloadKey,
     );
   }
 }

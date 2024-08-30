@@ -298,7 +298,7 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
         socialUrl: 'https://twitter.com/jens_hor',
       ),
       talkTitle:
-          'Simplify Design Systems and Designer/Developer Collaboration with Widgetbook',
+          'Developer Collaboration with Widgetbook',
     ),
   ),
   mateusz(
@@ -352,9 +352,14 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
       };
 
   @override
-  FFCard cardWidget({bool allowDownload = false}) => FFCard.speaker(
+  FFCard cardWidget({
+    bool allowDownload = false,
+    GlobalKey? downloadKey,
+  }) =>
+      FFCard.speaker(
         talk: talk,
         allowDownload: allowDownload,
+        downloadKey: downloadKey,
       );
 }
 

@@ -13,10 +13,13 @@ import 'package:vector_graphics/vector_graphics_compat.dart';
 abstract class FFCard extends StatelessWidget {
   String get name;
 
+  final GlobalKey? downloadImageKey;
+
   final bool allowDownload;
 
   const FFCard({
     super.key,
+    required this.downloadImageKey,
     required this.allowDownload,
   });
 
@@ -41,7 +44,11 @@ abstract class FFCard extends StatelessWidget {
     // );
   }
 
-  factory FFCard.speaker({required Talk talk, bool allowDownload = false}) {
+  factory FFCard.speaker({
+    required Talk talk,
+    bool allowDownload = false,
+    required GlobalKey? downloadKey,
+  }) {
     return switch (talk) {
       Talk(:final coHost?) => DoubleSpeakerCard(
           host: talk.host,
@@ -49,12 +56,14 @@ abstract class FFCard extends StatelessWidget {
           talkCategory: talk.category,
           talkTitle: talk.talkTitle,
           allowDownload: allowDownload,
+          downloadImageKey: downloadKey,
         ),
       Talk() => SpeakerCard(
           host: talk.host,
           talkCategory: talk.category,
           talkTitle: talk.talkTitle,
           allowDownload: allowDownload,
+          downloadImageKey: downloadKey,
         ),
     };
   }
@@ -65,6 +74,7 @@ abstract class FFCard extends StatelessWidget {
     required String logo,
     required String url,
     bool allowDownload = false,
+    required GlobalKey? downloadKey,
   }) {
     return SponsorCard(
       sponsorLevel: sponsorLevel,
@@ -83,6 +93,7 @@ abstract class FFCard extends StatelessWidget {
           ),
       },
       url: url,
+      downloadImageKey: downloadKey,
     );
   }
 
@@ -103,7 +114,7 @@ abstract class FFCard extends StatelessWidget {
   @nonVirtual
   @override
   Widget build(BuildContext context) {
-    final downloadImageKey = GlobalKey();
+    final downloadImageKey = this.downloadImageKey ?? GlobalKey();
     return Hero(
       tag: tag,
       child: Material(

@@ -20,6 +20,7 @@ class SponsorCard extends FFCard {
     super.key,
     required this.url,
     super.allowDownload = false,
+    required super.downloadImageKey,
   });
 
   @override
