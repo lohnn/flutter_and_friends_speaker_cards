@@ -137,7 +137,7 @@ abstract class FFCard extends StatelessWidget {
                       ),
                       Positioned(
                         left: dateOffset,
-                        bottom: 49,
+                        bottom: 30,
                         width: 700,
                         child: Column(
                           children: [
@@ -145,7 +145,7 @@ abstract class FFCard extends StatelessWidget {
                               '31 AUGUST - 2 SEPTEMBER',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
-                                fontSize: 24.03,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -154,7 +154,7 @@ abstract class FFCard extends StatelessWidget {
                               'STOCKHOLM',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
-                                fontSize: 24.03,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
