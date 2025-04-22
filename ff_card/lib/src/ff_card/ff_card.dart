@@ -139,14 +139,27 @@ abstract class FFCard extends StatelessWidget {
                         left: dateOffset,
                         bottom: 49,
                         width: 700,
-                        child: Text(
-                          '1-3 SEPTEMBER - STOCKHOLM',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.poppins(
-                            fontSize: 24.03,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                        child: Column(
+                          children: [
+                            Text(
+                              '31 AUGUST - 2 SEPTEMBER',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.poppins(
+                                fontSize: 24.03,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              'STOCKHOLM',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.poppins(
+                                fontSize: 24.03,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       ...buildRightSide(
