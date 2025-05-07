@@ -4,6 +4,18 @@ import 'package:ff_card/src/social.dart';
 import 'package:flutter/widgets.dart';
 
 enum PreMadeSpeakerCards implements PreMadeCardData {
+  sasha(
+    Workshop(
+      host: Host(
+        name: 'Sasha Denisov',
+        title: 'GDE in AI, Flutter and Firebase, @EPAM',
+        photo: 'Sasha Denisov.png',
+        socialText: 'https://www.linkedin.com/in/aleks-denisov/',
+        socialUrl: 'https://www.linkedin.com/in/aleks-denisov/',
+      ),
+      talkTitle: 'Hosting an AI Debate Club',
+    ),
+  ),
   renan(
     Presentation(
       host: Host(
@@ -235,18 +247,6 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
         socialUrl: 'https://twitter.com/salihgueler',
       ),
       talkTitle: 'Building a Cloud-Powered Diary Application with Flutter',
-    ),
-  ),
-  sasha(
-    Workshop(
-      host: Host(
-        name: 'Sasha Denisov',
-        title: 'Chief Software Engineer at EPAM',
-        photo: 'Sasha Denisov.jpg',
-        socialText: 'https://www.linkedin.com/in/aleks-denisov/',
-        socialUrl: 'https://www.linkedin.com/in/aleks-denisov/',
-      ),
-      talkTitle: 'Porting your mobile app to TV platforms',
     ),
   ),
   dominik(
