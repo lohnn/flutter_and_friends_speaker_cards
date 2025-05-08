@@ -16,6 +16,18 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
       talkTitle: 'Hosting an AI Debate Club',
     ),
   ),
+  sandra(
+    Presentation(
+      host: Host(
+        name: 'Sandra Lundh',
+        title: 'Software Developer @ Publicis Sapient',
+        photo: 'Sandra Lundh.jpg',
+        socialText: 'https://www.linkedin.com/in/sandra-lundh/',
+        socialUrl: 'https://www.linkedin.com/in/sandra-lundh/',
+      ),
+      talkTitle: 'Test Semantics with Golden Tests',
+    ),
+  ),
   renan(
     Presentation(
       host: Host(
