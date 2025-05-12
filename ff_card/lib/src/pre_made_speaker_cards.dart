@@ -16,6 +16,30 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
       talkTitle: 'Hosting an AI Debate Club',
     ),
   ),
+  sandra(
+    Presentation(
+      host: Host(
+        name: 'Sandra Lundh',
+        title: 'Software Developer @ Publicis Sapient',
+        photo: 'Sandra Lundh.jpg',
+        socialText: 'https://www.linkedin.com/in/sandra-lundh/',
+        socialUrl: 'https://www.linkedin.com/in/sandra-lundh/',
+      ),
+      talkTitle: 'Test Semantics with Golden Tests',
+    ),
+  ),
+  mateusz(
+    Presentation(
+      host: Host(
+        name: 'Mateusz Wojtczak',
+        title: 'Head of Mobile at LeanCode',
+        photo: 'Mateusz Wojtczak.jpg',
+        socialText: '@matiwojt',
+        socialUrl: 'https://twitter.com/@matiwojt',
+      ),
+      talkTitle: 'Mastering Efficiency in 2025: Build Apps Faster with Flutter',
+    ),
+  ),
   renan(
     Presentation(
       host: Host(
@@ -299,25 +323,6 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
       ),
       talkTitle:
           'Simplify Design Systems and Designer/Developer Collaboration with Widgetbook',
-    ),
-  ),
-  mateusz(
-    Workshop(
-      host: Host(
-        name: 'Mateusz Wojtczak',
-        title: 'Head of Mobile at LeanCode',
-        photo: 'Mateusz Wojtczak.jpg',
-        socialText: '@matiwojt',
-        socialUrl: 'https://twitter.com/@matiwojt',
-      ),
-      coHost: Host(
-        name: 'Julia Borkowska',
-        title: 'Head of QA at LeanCode',
-        photo: 'Julia Borkowska.jpg',
-        socialText: '@julia_d_borko',
-        socialUrl: 'https://twitter.com/julia_d_borko',
-      ),
-      talkTitle: "Let's test it with Patrol!",
     ),
   ),
   moritz(
