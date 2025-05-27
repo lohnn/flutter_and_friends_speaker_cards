@@ -40,16 +40,52 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
       talkTitle: 'Mastering Efficiency in 2025: Build Apps Faster with Flutter',
     ),
   ),
+  remi(
+    Presentation(
+      host: Host(
+        name: 'Remi Rousselet',
+        title: 'Software Engineer',
+        photo: 'Remi Rousselet.jpg',
+        socialText: '@remi_rousselet',
+        socialUrl: 'https://twitter.com/remi_rousselet',
+      ),
+      talkTitle: "State management is hard.\nHere's why.",
+    ),
+  ),
   renan(
     Presentation(
       host: Host(
         name: 'Renan Araujo',
-        title: 'Software Engineer',
+        title: 'Senior Software Engineer @ Superlist & Flutter GDE',
         photo: 'Renan Araujo.jpg',
         socialText: '@reNotANumber',
         socialUrl: 'https://twitter.com/reNotANumber',
       ),
-      talkTitle: 'Flutter web superfast: WASM',
+      talkTitle: 'Flame and shaders: The post processing API ',
+    ),
+  ),
+  roaa(
+    Presentation(
+      host: Host(
+        name: 'Roaa Khaddam',
+        title: 'Senior Software Engineer & Flutter GDE',
+        photo: 'Roaa Khaddam.png',
+        socialText: '@roaakdm',
+        socialUrl: 'https://twitter.com/roaakdm',
+      ),
+      talkTitle: 'Visualizing Algorithms on the Flutter Canvas',
+    ),
+  ),
+  morgan(
+    Presentation(
+      host: Host(
+        name: 'Morgan Hunt',
+        title: 'Senior Software Engineer',
+        photo: 'Morgan Hunt.jpg',
+        socialText: '@mrgnhnt96_dev',
+        socialUrl: 'https://twitter.com/mrgnhnt96_dev',
+      ),
+      talkTitle: 'Architecting for 15 Million Users',
     ),
   ),
   pavel(
@@ -123,18 +159,6 @@ enum PreMadeSpeakerCards implements PreMadeCardData {
         socialUrl: 'https://twitter.com/mhadaily',
       ),
       talkTitle: 'Practical Design Patterns for Flutter Development',
-    ),
-  ),
-  roaa(
-    Presentation(
-      host: Host(
-        name: 'Roaa Khaddam',
-        title: 'Software Engineer, Flutter GDE',
-        photo: 'Roaa Khaddam.png',
-        socialText: '@roaakdm',
-        socialUrl: 'https://twitter.com/roaakdm',
-      ),
-      talkTitle: 'Code Meets Art: Flutter for Creative Coding',
     ),
   ),
   communityPlan(
